@@ -17,7 +17,93 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		<customer>ers-std</customer>
 	</properties>
+
+
+
+<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-filter-plugin</artifactId>
+				<groupId>com.seamless.meta.plugins</groupId>
+				<version>0.1</version>
+				<executions>
+					<execution>
+						<id>build-rpmspec</id>
+						<goals>
+							<goal>filter</goal>
+						</goals>
+						<phase>process-resources</phase>
+						<configuration>
+							<files>
+								<param>${project.build.directory}/rpm-spec-template/rpm.spec</param>
+							</files>
+							<fields>
+								<rpmBuildNumber>${buildNumber}</rpmBuildNumber>
+								<rpmRequires>ers-base &gt;= 1.2 | ersinstall &gt;= 1.0|
+									contrib-jre</rpmRequires>
+								<rpmBuildArch>noarch</rpmBuildArch>
+								<rpmUseInit>standard-automation</rpmUseInit>
+								<rpmService>standard-automation</rpmService>
+								<rpmAddRunFile>standard-automation</rpmAddRunFile>
+								<rpmFileListExcludeDir>opt/seamless/lib/perl</rpmFileListExcludeDir>
+							</fields>
+							<outputDirectory>${project.build.directory}/rpm</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>build-scripts</id>
+						<goals>
+							<goal>filter</goal>
+						</goals>
+						<phase>process-resources</phase>
+						<configuration>
+							<files>
+								<param>src/main/bin/standard-automation.sh</param>
+								<param>src/main/bin/automation-ui.sh</param>
+							</files>
+							<fields>
+								<buildNumber>${buildNumber}</buildNumber>
+							</fields>
+							<outputDirectory>${project.build.directory}/bin</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.21.0</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${suiteXml}</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemProperties>
+						<property>
+							<name>customer</name>
+							<value>${customer}</value>
+						</property>
+					</systemProperties>
+					<testFailureIgnore>true</testFailureIgnore>
+					<forkCount>3</forkCount>
+					<reuseForks>true</reuseForks>
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
