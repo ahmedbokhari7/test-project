@@ -28,8 +28,9 @@ public class ErsUssdStringBased extends TestBase{
 	@Test(dataProvider = "ussdCreditTransfer", dataProviderClass = UssdDataProvider.class, groups = {
 			"ussd-credit-transfer" }) // This method need to be replicated to have ussd-R2S with subscriber data
 	public void verifyCreditTransfer(HashMap<String, String> testdata) {
+		System.out.println("AHmed at function");
 		String scenarioName = testdata.get("scenario");
-		
+		System.out.println(scenarioName);
 	}
 
 }

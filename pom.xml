@@ -19,6 +19,7 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<customer>ers-std</customer>
 		<product>ers</product>
+	    <local.run>true</local.run>
 		<testDataFile>src/test/resources/customer/${customer}/test-data/data_${product}.xml</testDataFile>
 
 	</properties>
@@ -83,9 +84,21 @@
 						<suiteXmlFile>${suiteXml}</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemProperties>
+					    <property>
+							<name>testDataFile</name>
+							<value>${testDataFile}</value>
+						</property>
 						<property>
 							<name>customer</name>
 							<value>${customer}</value>
+						</property>
+						<property>
+							<name>local.run</name>
+							<value>${local.run}</value>
+						</property>
+						<property>
+							<name>product</name>
+							<value>${product}</value>
 						</property>
 					</systemProperties>
 					<testFailureIgnore>true</testFailureIgnore>

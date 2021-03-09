@@ -28,8 +28,10 @@ public class HelperClass {
 				&& (FilenameUtils.getExtension(System.getProperty("testDataFile")).equalsIgnoreCase("xml")
 						|| FilenameUtils.getExtension(System.getProperty("testDataFile")).equalsIgnoreCase("json"))) {
 			xmlDataSet = System.getProperty("testDataFile");
+			System.out.println("AHMED 1");
 			log.debug("Provided test data source path: " + xmlDataSet);
 		} else {
+			System.out.println("AHMED 2");
 			xmlDataSet = ConfigPath.DEFAULT_TEST_DATA + customer.getCustomer() + "/test-data/data_"
 					+ product.getProductName() + ".xml";
 			log.warn("No or invalid test data file provided. Taking " + xmlDataSet + " by default");

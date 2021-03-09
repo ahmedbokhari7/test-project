@@ -1,64 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4728" started-at="2021-03-09T11:47:09 PKT" finished-at="2021-03-09T11:47:13 PKT">
+  <suite name="Suite" duration-ms="458" started-at="2021-03-09T12:16:11 PKT" finished-at="2021-03-09T12:16:12 PKT">
     <groups>
       <group name="ussd-credit-transfer">
         <method signature="ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" class="com.ahmed.ussd.stringbased.ErsUssdStringBased"/>
       </group> <!-- ussd-credit-transfer -->
     </groups>
-    <test name="Default test" duration-ms="4728" started-at="2021-03-09T11:47:09 PKT" finished-at="2021-03-09T11:47:13 PKT">
+    <test name="Test" duration-ms="458" started-at="2021-03-09T12:16:11 PKT" finished-at="2021-03-09T12:16:12 PKT">
       <class name="com.ahmed.ussd.stringbased.ErsUssdStringBased">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="beforeSuite" is-config="true" duration-ms="9" started-at="2021-03-09T11:47:09 PKT" finished-at="2021-03-09T11:47:09 PKT">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="beforeSuite" is-config="true" duration-ms="9" started-at="2021-03-09T12:16:11 PKT" finished-at="2021-03-09T12:16:11 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="FAIL" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" duration-ms="0" started-at="2021-03-09T11:47:13 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-09T11:47:13 PKT">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Data Provider public java.lang.Object[][] com.ahmed.dataproviders.UssdDataProvider.getDataForUSSDStockTransfer() returned a null value]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Data Provider public java.lang.Object[][] com.ahmed.dataproviders.UssdDataProvider.getDataForUSSDStockTransfer() returned a null value
-at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:147)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:797)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:789)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1257)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-03-09T12:16:12 PKT" finished-at="2021-03-09T12:16:12 PKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" duration-ms="4" started-at="2021-03-09T12:16:12 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-09T12:16:12 PKT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS, scenario=Stock transfer:Valid data, scenarioDesc=Verify that stock transfer is successful and correct message is displayed when valid data is provided, tdrValidation=<tdrValidation><![CDATA[
+                    RECONCILIATION|||agentMSISDN|||InitiatorId,SenderMSISDN,SenderId
+                    RECONCILIATION|||receiverMSISDN|||RecieverMSISDN
+                    RECONCILIATION|||transferAmount|||RequestAmountValue]]]]><![CDATA[>
+                </tdrValidation>
+}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreditTransfer -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="afterSuite" is-config="true" duration-ms="1" started-at="2021-03-09T11:47:13 PKT" finished-at="2021-03-09T11:47:13 PKT">
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="tearDownMethod" is-config="true" duration-ms="1" started-at="2021-03-09T12:16:12 PKT" finished-at="2021-03-09T12:16:12 PKT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCreditTransfer status=SUCCESS method=ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-03-09T12:16:12 PKT" finished-at="2021-03-09T12:16:12 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- com.ahmed.ussd.stringbased.ErsUssdStringBased -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
