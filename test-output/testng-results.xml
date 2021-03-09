@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4728" started-at="2021-03-09T11:47:09 PKT" finished-at="2021-03-09T11:47:13 PKT">
+    <groups>
+      <group name="ussd-credit-transfer">
+        <method signature="ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" class="com.ahmed.ussd.stringbased.ErsUssdStringBased"/>
+      </group> <!-- ussd-credit-transfer -->
+    </groups>
+    <test name="Default test" duration-ms="4728" started-at="2021-03-09T11:47:09 PKT" finished-at="2021-03-09T11:47:13 PKT">
+      <class name="com.ahmed.ussd.stringbased.ErsUssdStringBased">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="beforeSuite" is-config="true" duration-ms="9" started-at="2021-03-09T11:47:09 PKT" finished-at="2021-03-09T11:47:09 PKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="FAIL" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" duration-ms="0" started-at="2021-03-09T11:47:13 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-09T11:47:13 PKT">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Data Provider public java.lang.Object[][] com.ahmed.dataproviders.UssdDataProvider.getDataForUSSDStockTransfer() returned a null value]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Data Provider public java.lang.Object[][] com.ahmed.dataproviders.UssdDataProvider.getDataForUSSDStockTransfer() returned a null value
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:147)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:797)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:789)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreditTransfer -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="afterSuite" is-config="true" duration-ms="1" started-at="2021-03-09T11:47:13 PKT" finished-at="2021-03-09T11:47:13 PKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.ahmed.ussd.stringbased.ErsUssdStringBased -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

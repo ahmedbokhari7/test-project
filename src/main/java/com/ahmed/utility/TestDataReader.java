@@ -1,6 +1,7 @@
 package com.ahmed.utility;
 
 import java.io.File;
+
 import java.io.StringWriter;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -40,6 +41,7 @@ public class TestDataReader {
 	
 	  private TestDataReader() {
 	        testType = testType.REGRESSION;
+	        skipBugs = helperClass.isSkipBugs();
 	        testDataFile = helperClass.getXmlDataSet();
 	        testDataFileType =FilenameUtils.getExtension(testDataFile);
 	    }

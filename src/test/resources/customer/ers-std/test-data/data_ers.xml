@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testData name="ers-std">
+ <channel name="ussd">
+         <feature name="ussdCreditTransfer">
+            <dataset>
+                <agentMSISDN>16050000</agentMSISDN>
+                <receiverMSISDN>16070000</receiverMSISDN>
+                <transferAmount>500</transferAmount>
+                <pin>2016</pin>
+                <expectedResult>SUCCESS</expectedResult>
+                <scenario>Stock transfer:Valid data</scenario>
+                <scenarioDesc>Verify that stock transfer is successful and correct message is displayed when valid data is provided</scenarioDesc>
+                <tdrValidation><![CDATA[
+                    RECONCILIATION|||agentMSISDN|||InitiatorId,SenderMSISDN,SenderId
+                    RECONCILIATION|||receiverMSISDN|||RecieverMSISDN
+                    RECONCILIATION|||transferAmount|||RequestAmountValue]]>
+                </tdrValidation>
+            </dataset>
+            </feature>
+ </channel>
+ </testData>
