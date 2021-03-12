@@ -7,6 +7,9 @@
  */
 package com.ahmed.common.utilities;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,14 +39,12 @@ public class HelperClass {
 					+ product.getProductName() + ".xml";
 			log.warn("No or invalid test data file provided. Taking " + xmlDataSet + " by default");
 		}
-		
 
 		if (System.getProperty("skipBugs") != null)
 			skipBugs = Boolean.getBoolean("skipBugs");
 		else
 			skipBugs = false;
 
-		
 	}
 
 	public static HelperClass getInstance() {
@@ -64,5 +65,32 @@ public class HelperClass {
 		// TODO Auto-generated method stub
 		return skipBugs;
 	}
+
+	public String returnUSSDUrl(String url, String[] options) {
+		long sessionId = getRandomSessionId();
+		return formUssdUrl(sessionId, url, options);
+	}
+
+	public long getRandomSessionId() {
+		Date date = new Date();
+		return new Timestamp(date.getTime()).getTime();
+	}
+	
+    private String formUssdUrl(long sessionId,String url,String [] options) throws NullPointerException,IndexOutOfBoundsException
+    {
+        String appEnvironment = "10.10.0.62";//hard coded given
+        url = url.replace("HOST",appEnvironment)
+                .replace("SESSION_ID",String.valueOf(sessionId));
+        if(options != null && options.length >= 1)
+        {
+            for(int i=0;i<options.length;i++)
+            {
+                url = url.replace("${"+i+"}",options[i].replace(" ","%20"));
+            }
+        }
+        log.info("USSD url: "+url);
+        return url;
+    }
+
 
 }

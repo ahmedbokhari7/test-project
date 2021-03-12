@@ -2,50 +2,45 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="327" started-at="2021-03-12T15:30:20 PKT" finished-at="2021-03-12T15:30:20 PKT">
+  <suite name="Default suite" duration-ms="53" started-at="2021-03-12T16:33:21 PKT" finished-at="2021-03-12T16:33:21 PKT">
     <groups>
       <group name="ussd-credit-transfer">
-        <method signature="ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" class="com.ahmed.ussd.stringbased.ErsUssdStringBased"/>
+        <method signature="ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d]" name="verifyCreditTransfer" class="com.ahmed.ussd.stringbased.ErsUssdStringBased"/>
       </group> <!-- ussd-credit-transfer -->
     </groups>
-    <test name="Default test" duration-ms="327" started-at="2021-03-12T15:30:20 PKT" finished-at="2021-03-12T15:30:20 PKT">
+    <test name="Default test" duration-ms="53" started-at="2021-03-12T16:33:21 PKT" finished-at="2021-03-12T16:33:21 PKT">
       <class name="com.ahmed.ussd.stringbased.ErsUssdStringBased">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="beforeSuite" is-config="true" duration-ms="7" started-at="2021-03-12T15:30:20 PKT" finished-at="2021-03-12T15:30:20 PKT">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d]" name="beforeSuite" is-config="true" duration-ms="7" started-at="2021-03-12T16:33:21 PKT" finished-at="2021-03-12T16:33:21 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-03-12T15:30:20 PKT" finished-at="2021-03-12T15:30:20 PKT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-03-12T16:33:21 PKT" finished-at="2021-03-12T16:33:21 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="verifyCreditTransfer" duration-ms="4" started-at="2021-03-12T15:30:20 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-12T15:30:20 PKT">
+        <test-method status="PASS" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d]" name="verifyCreditTransfer" duration-ms="4" started-at="2021-03-12T16:33:21 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-12T16:33:21 PKT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS, scenario=Stock transfer:Valid data, scenarioDesc=Verify that stock transfer is successful and correct message is displayed when valid data is provided, tdrValidation=<tdrValidation><![CDATA[
-                    RECONCILIATION|||agentMSISDN|||InitiatorId,SenderMSISDN,SenderId
-                    RECONCILIATION|||receiverMSISDN|||RecieverMSISDN
-                    RECONCILIATION|||transferAmount|||RequestAmountValue]]]]><![CDATA[>
-                </tdrValidation>
-}]]>
+                <![CDATA[{agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS, scenario=Stock transfer:Valid data, scenarioDesc=Verify that stock transfer is successful and correct message is displayed when valid data is provided}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreditTransfer -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="tearDownMethod" is-config="true" duration-ms="1" started-at="2021-03-12T15:30:20 PKT" finished-at="2021-03-12T15:30:20 PKT">
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d]" name="tearDownMethod" is-config="true" duration-ms="1" started-at="2021-03-12T16:33:21 PKT" finished-at="2021-03-12T16:33:21 PKT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyCreditTransfer status=SUCCESS method=ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666] output={null}]]]>
+                <![CDATA[[TestResult name=verifyCreditTransfer status=SUCCESS method=ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@a7e666]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-03-12T15:30:20 PKT" finished-at="2021-03-12T15:30:20 PKT">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@4d5d943d]" name="afterSuite" is-config="true" duration-ms="1" started-at="2021-03-12T16:33:21 PKT" finished-at="2021-03-12T16:33:21 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
