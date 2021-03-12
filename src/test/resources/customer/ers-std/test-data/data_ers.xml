@@ -10,12 +10,7 @@
                 <expectedResult>SUCCESS</expectedResult>
                 <scenario>Stock transfer:Valid data</scenario>
                 <scenarioDesc>Verify that stock transfer is successful and correct message is displayed when valid data is provided</scenarioDesc>
-                <tdrValidation><![CDATA[
-                    RECONCILIATION|||agentMSISDN|||InitiatorId,SenderMSISDN,SenderId
-                    RECONCILIATION|||receiverMSISDN|||RecieverMSISDN
-                    RECONCILIATION|||transferAmount|||RequestAmountValue]]>
-                </tdrValidation>
-            </dataset>
+               </dataset>
             </feature>
  </channel>
  </testData>

@@ -29,9 +29,25 @@ public class ErsUssdStringBased extends TestBase{
 			"ussd-credit-transfer" }) // This method need to be replicated to have ussd-R2S with subscriber data
 	public void verifyCreditTransfer(HashMap<String, String> testdata) {
 		System.out.println("AHmed at function");
-		String scenarioName = testdata.get("scenario");
-		System.out.println(scenarioName);
+		//String scenarioName = testdata.get("scenario");
+		System.out.println(testdata.get("scenario"));
 		System.out.println("AHMED SYSTEM VALUE"+ System.getProperty("local.run"));
+		
+		/////////////////
+		
+		
+		String scenarioName = testdata.get("scenario");
+        String scenarioDesc = testdata.get("scenarioDesc");
+        String expectedResult = testdata.get("expectedResult");
+        String url = reader.readProperties("ussd.url.transfer");
+        String senderMSISDN = testdata.get("agentMSISDN");
+        String receiverMSISDN = testdata.get("receiverMSISDN");
+        String amount = testdata.get("transferAmount");
+        String confirmReceiverMSISDN = null;
+        String pin = testdata.get("pin");
+        String[] params;
+		
+		
 		
 	}
 
