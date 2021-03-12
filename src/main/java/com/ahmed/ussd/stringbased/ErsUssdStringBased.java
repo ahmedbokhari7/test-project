@@ -31,6 +31,8 @@ public class ErsUssdStringBased extends TestBase{
 		System.out.println("AHmed at function");
 		String scenarioName = testdata.get("scenario");
 		System.out.println(scenarioName);
+		System.out.println("AHMED SYSTEM VALUE"+ System.getProperty("local.run"));
+		
 	}
 
 }
