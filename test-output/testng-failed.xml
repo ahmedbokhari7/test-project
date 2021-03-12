@@ -9,7 +9,7 @@
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
           <include name="tearDownMethod"/>
-          <include name="verifyCreditTransfer"/>
+          <include name="verifyCreditTransfer" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ahmed.ussd.stringbased.ErsUssdStringBased -->
     </classes>

@@ -19,12 +19,12 @@ import com.ahmed.common.utilities.HelperClass;
 public class DatabaseQuery {
     private static Logger log;
     private static HelperClass helperClass;
-    private static DBConnection dbConnection;
+    private static DBConnection dbConnection= DBConnection.getInstance();
     private static ConfigPropertyReader reader;
 
     private DatabaseQuery() {
         helperClass = HelperClass.getInstance();
-    //    dbConnection = DBConnection.getInstance();
+        dbConnection = DBConnection.getInstance();
         log = LogManager.getLogger(DatabaseQuery.class);
         reader = ConfigPropertyReader.getInstance();
     }

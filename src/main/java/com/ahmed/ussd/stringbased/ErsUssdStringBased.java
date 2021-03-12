@@ -53,7 +53,8 @@ public class ErsUssdStringBased extends TestBase {
 		log.info("Scenario Description: " + scenarioDesc);
 		url = helperClass.returnUSSDUrl(url, params);
 		
-		String senderBalanceBefore=query.getResellerBalance("DIST1","RESELLER");
+		String senderBalanceBefore=query.getResellerBalance("PMG","RESELLER");
+		System.out.println("HASHIM"+senderBalanceBefore);
 
 	}
 

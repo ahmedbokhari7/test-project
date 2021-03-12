@@ -11,6 +11,11 @@ import java.util.Map;
 public class DBConnection {
 
     private static Map<String, HikariDataSource> databaseMap = new HashMap<String, HikariDataSource>();
+    private static final DBConnection dbConnection = new DBConnection();
+    public static DBConnection getInstance()
+    {
+        return dbConnection;
+    }
 
     public static void configureConnections(){
         HikariConfig config = new HikariConfig();
