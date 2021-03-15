@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="283" started-at="2021-03-15T16:53:18 PKT" finished-at="2021-03-15T16:53:18 PKT">
+  <suite name="Suite" duration-ms="284" started-at="2021-03-15T17:09:16 PKT" finished-at="2021-03-15T17:09:16 PKT">
     <groups>
       <group name="ussd-credit-transfer">
         <method signature="ErsUssdStringBased.verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="verifyCreditTransfer" class="com.ahmed.ussd.stringbased.ErsUssdStringBased"/>
       </group> <!-- ussd-credit-transfer -->
     </groups>
-    <test name="Test" duration-ms="283" started-at="2021-03-15T16:53:18 PKT" finished-at="2021-03-15T16:53:18 PKT">
+    <test name="Test" duration-ms="284" started-at="2021-03-15T17:09:16 PKT" finished-at="2021-03-15T17:09:16 PKT">
       <class name="com.ahmed.ussd.stringbased.ErsUssdStringBased">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="beforeSuite" is-config="true" duration-ms="6" started-at="2021-03-15T16:53:18 PKT" finished-at="2021-03-15T16:53:18 PKT">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="beforeSuite" is-config="true" duration-ms="6" started-at="2021-03-15T17:09:16 PKT" finished-at="2021-03-15T17:09:16 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-03-15T16:53:18 PKT" finished-at="2021-03-15T16:53:18 PKT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-03-15T17:09:16 PKT" finished-at="2021-03-15T17:09:16 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="verifyCreditTransfer" duration-ms="239" started-at="2021-03-15T16:53:18 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-15T16:53:18 PKT">
+        <test-method status="PASS" signature="verifyCreditTransfer(java.util.HashMap)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="verifyCreditTransfer" duration-ms="242" started-at="2021-03-15T17:09:16 PKT" data-provider="ussdCreditTransfer" finished-at="2021-03-15T17:09:16 PKT">
           <params>
             <param index="0">
               <value>
@@ -29,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreditTransfer -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="tearDownMethod" is-config="true" duration-ms="0" started-at="2021-03-15T16:53:18 PKT" finished-at="2021-03-15T16:53:18 PKT">
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="tearDownMethod" is-config="true" duration-ms="3" started-at="2021-03-15T17:09:16 PKT" finished-at="2021-03-15T17:09:16 PKT">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-03-15T16:53:23 PKT" finished-at="2021-03-15T16:53:23 PKT">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-03-15T17:09:22 PKT" finished-at="2021-03-15T17:09:22 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

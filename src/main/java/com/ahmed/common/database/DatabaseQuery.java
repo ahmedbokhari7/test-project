@@ -51,12 +51,15 @@ public class DatabaseQuery {
         	RowSetFactory factory = RowSetProvider.newFactory();
             CachedRowSet crs = factory.createCachedRowSet();
             crs.populate(result);
+            System.out.println("RESULT "+crs);
             return crs;
         }
     }
     public String getResellerBalance(String resellerAccountType,String accountId) {
         String resellerBalance = null;
         String query = "select balance from accounts where accountid='" + accountId + "' AND accountTypeId='" + resellerAccountType + "'";
+        System.out.println("QUERY =");
+        System.out.println(query);
         log.debug("Executing query: " + query);
         
         try (ResultSet rs = selectQuery(query, dbConnection.getDatabaseConnection("accounts"))) {
