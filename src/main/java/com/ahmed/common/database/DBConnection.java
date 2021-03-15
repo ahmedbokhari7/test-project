@@ -11,14 +11,27 @@ import java.util.Map;
 public class DBConnection {
 
     private static Map<String, HikariDataSource> databaseMap = new HashMap<String, HikariDataSource>();
-    private static final DBConnection dbConnection = new DBConnection();
+    private static DBConnection dbConnection;
+    
+    private DBConnection()
+    {
+    	configureConnections();
+    }
     public static DBConnection getInstance()
     {	
-    	
+    	if(dbConnection == null)
+    	{
+    		synchronized (DBConnection.class) 
+    		{
+    			if(dbConnection == null)
+    				dbConnection = new DBConnection();
+			}
+    		
+    	}
         return dbConnection;
     }
 
-    public static void configureConnections(){
+    private void configureConnections(){
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl( "jdbc:mysql://10.10.0.62:3306/accounts" );
         config.setUsername( "refill" );
@@ -48,7 +61,7 @@ public class DBConnection {
 //        databaseMap.put("commission", commissionConnection);
     }
 
-    public static Connection getDatabaseConnection(String dbName) throws SQLException {
+    public Connection getDatabaseConnection(String dbName) throws SQLException {
         if(databaseMap.containsKey(dbName)){
             return databaseMap.get(dbName).getConnection();
         } else

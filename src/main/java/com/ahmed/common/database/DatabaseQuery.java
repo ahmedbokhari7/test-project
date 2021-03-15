@@ -28,7 +28,6 @@ public class DatabaseQuery {
         dbConnection = DBConnection.getInstance();
         log = LogManager.getLogger(DatabaseQuery.class);
         reader = ConfigPropertyReader.getInstance();
-        DBConnection.configureConnections();
     }
 
     /**
@@ -60,7 +59,7 @@ public class DatabaseQuery {
         String query = "select balance from accounts where accountid='" + accountId + "' AND accountTypeId='" + resellerAccountType + "'";
         log.debug("Executing query: " + query);
         
-        try (ResultSet rs = selectQuery(query, DBConnection.getDatabaseConnection("accounts"))) {
+        try (ResultSet rs = selectQuery(query, dbConnection.getDatabaseConnection("accounts"))) {
             while (rs.next()) {
                 resellerBalance = rs.getString(1);
             }
