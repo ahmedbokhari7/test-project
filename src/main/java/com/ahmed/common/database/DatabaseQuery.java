@@ -20,6 +20,7 @@ public class DatabaseQuery {
     private static Logger log;
     private static HelperClass helperClass;
     private static DBConnection dbConnection= DBConnection.getInstance();
+    
     private static ConfigPropertyReader reader;
 
     private DatabaseQuery() {
@@ -27,6 +28,7 @@ public class DatabaseQuery {
         dbConnection = DBConnection.getInstance();
         log = LogManager.getLogger(DatabaseQuery.class);
         reader = ConfigPropertyReader.getInstance();
+        DBConnection.configureConnections();
     }
 
     /**
@@ -36,14 +38,18 @@ public class DatabaseQuery {
         return DatabaseQueryHelper.instance;
     }
     private static class DatabaseQueryHelper {
+    	
         private static final DatabaseQuery instance = new DatabaseQuery();
     }
     	
     
     
     public CachedRowSet selectQuery(String query, Connection database) throws SQLException {
-        try (Connection connection = ((Statement) database).getConnection(); Statement statement = connection.createStatement(); ResultSet result=statement.executeQuery(query)) {
-            RowSetFactory factory = RowSetProvider.newFactory();
+    	
+        try (Statement statement = database.createStatement(); ResultSet result=statement.executeQuery(query)) {
+            
+        	//DataSourceUtils.getConnection(dataSource)
+        	RowSetFactory factory = RowSetProvider.newFactory();
             CachedRowSet crs = factory.createCachedRowSet();
             crs.populate(result);
             return crs;
@@ -53,6 +59,7 @@ public class DatabaseQuery {
         String resellerBalance = null;
         String query = "select balance from accounts where accountid='" + accountId + "' AND accountTypeId='" + resellerAccountType + "'";
         log.debug("Executing query: " + query);
+        
         try (ResultSet rs = selectQuery(query, DBConnection.getDatabaseConnection("accounts"))) {
             while (rs.next()) {
                 resellerBalance = rs.getString(1);

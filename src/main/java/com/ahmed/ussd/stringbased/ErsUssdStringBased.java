@@ -46,7 +46,7 @@ public class ErsUssdStringBased extends TestBase {
 		String confirmReceiverMSISDN = null;
 		String pin = testdata.get("pin");
 		String[] params;
-		System.out.println("CASSIM" + scenarioName);
+		System.out.println("Scenario" + scenarioName);
 
 		params = new String[] { senderMSISDN, receiverMSISDN, amount, pin };
 		log.info("Scenario: " + scenarioName);
@@ -54,7 +54,7 @@ public class ErsUssdStringBased extends TestBase {
 		url = helperClass.returnUSSDUrl(url, params);
 		
 		String senderBalanceBefore=query.getResellerBalance("PMG","RESELLER");
-		System.out.println("HASHIM"+senderBalanceBefore);
+		System.out.println("Sender Balance Before "+senderBalanceBefore);
 
 	}
 

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Mar 12 17:19:08 PKT 2021</td>
+<td>Started on:</td><td>Mon Mar 15 16:39:48 PKT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (66 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (46 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,9 +76,9 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.ahmed.ussd.stringbased.ErsUssdStringBased.verifyCreditTransfer()'><b>verifyCreditTransfer</b><br>Test class: com.ahmed.ussd.stringbased.ErsUssdStringBased<br>Parameters: {agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS, scenario=Stock transfer:Valid data, scenarioDesc=Verify that stock transfer is successful and correct message is displayed when valid data is provided}</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ahmed.common.database.DatabaseQuery.selectQuery(DatabaseQuery.java:45)
-	at com.ahmed.common.database.DatabaseQuery.getResellerBalance(DatabaseQuery.java:56)
+<td><div><pre>java.lang.ClassCastException: com.zaxxer.hikari.pool.HikariProxyConnection cannot be cast to java.sql.Statement
+	at com.ahmed.common.database.DatabaseQuery.selectQuery(DatabaseQuery.java:49)
+	at com.ahmed.common.database.DatabaseQuery.getResellerBalance(DatabaseQuery.java:63)
 	at com.ahmed.ussd.stringbased.ErsUssdStringBased.verifyCreditTransfer(ErsUssdStringBased.java:56)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -108,10 +108,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace282496973", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace282496973'><pre>java.lang.NullPointerException
-	at com.ahmed.common.database.DatabaseQuery.selectQuery(DatabaseQuery.java:45)
-	at com.ahmed.common.database.DatabaseQuery.getResellerBalance(DatabaseQuery.java:56)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1223850219", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1223850219'><pre>java.lang.ClassCastException: com.zaxxer.hikari.pool.HikariProxyConnection cannot be cast to java.sql.Statement
+	at com.ahmed.common.database.DatabaseQuery.selectQuery(DatabaseQuery.java:49)
+	at com.ahmed.common.database.DatabaseQuery.getResellerBalance(DatabaseQuery.java:63)
 	at com.ahmed.ussd.stringbased.ErsUssdStringBased.verifyCreditTransfer(ErsUssdStringBased.java:56)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -143,7 +143,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.ahmed.ussd.stringbased.ErsUssdStringBased@a1153bc</td></tr>
+<td>com.ahmed.ussd.stringbased.ErsUssdStringBased@60015ef5</td></tr>
 </table><p>
 </body>
 </html>
