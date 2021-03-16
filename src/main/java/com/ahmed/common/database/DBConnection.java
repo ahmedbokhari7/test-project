@@ -17,6 +17,7 @@ public class DBConnection {
     {
     	configureConnections();
     }
+    //test
     public static DBConnection getInstance()
     {	
     	if(dbConnection == null)
