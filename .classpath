@@ -31,5 +31,41 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ahmedbokhari/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar" sourcepath="/Users/ahmedbokhari/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="commons-io"/>
+			<attribute name="maven.artifactId" value="commons-io"/>
+			<attribute name="maven.version" value="2.6"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ahmedbokhari/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar" sourcepath="/Users/ahmedbokhari/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.jayway.jsonpath"/>
+			<attribute name="maven.artifactId" value="json-path"/>
+			<attribute name="maven.version" value="2.4.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ahmedbokhari/.m2/repository/io/rest-assured/rest-assured/4.3.0/rest-assured-4.3.0.jar" sourcepath="/Users/ahmedbokhari/.m2/repository/io/rest-assured/rest-assured/4.3.0/rest-assured-4.3.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="io.rest-assured"/>
+			<attribute name="maven.artifactId" value="rest-assured"/>
+			<attribute name="maven.version" value="4.3.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ahmedbokhari/.m2/repository/io/rest-assured/json-path/4.3.0/json-path-4.3.0.jar" sourcepath="/Users/ahmedbokhari/.m2/repository/io/rest-assured/json-path/4.3.0/json-path-4.3.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="io.rest-assured"/>
+			<attribute name="maven.artifactId" value="json-path"/>
+			<attribute name="maven.version" value="4.3.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

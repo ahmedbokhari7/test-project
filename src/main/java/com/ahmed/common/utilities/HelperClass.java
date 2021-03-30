@@ -9,6 +9,7 @@
 package com.ahmed.common.utilities;
 
 import java.sql.Timestamp;
+
 import java.util.Date;
 
 import org.apache.commons.io.FilenameUtils;
@@ -25,6 +26,8 @@ public class HelperClass {
 	private Customer customer = Customer.ERS_STD;
 	private Product product = Product.ERS;
 	private final boolean skipBugs;
+	private String restHost;
+	private static ConfigPropertyReader reader = ConfigPropertyReader.getInstance();
 
 	public HelperClass() {
 
@@ -93,9 +96,23 @@ public class HelperClass {
         return url;
     }
 
-	public String returnRestBaseUri() {
-		// TODO Auto-generated method stub
-		return null;
+	public String returnRestBaseUri()
+	{
+		String uri=null;
+		try
+		{
+			String restProtocol = reader.readProperties("REST.PROTOCOL");
+			String restPort = reader.readProperties("REST.PORT");
+			String server = restHost;
+			uri = restProtocol + server + restPort;
+			log.info("Generated REST API url: "+uri);
+
+		}
+		catch (Exception e)
+		{
+			log.error("Error occurred",e);
+		}
+		return uri;
 	}
 
 

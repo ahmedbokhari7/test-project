@@ -17,6 +17,9 @@ import org.testng.annotations.Test;
 import com.ahmed.dataproviders.RestDataProvider;
 import com.ahmed.testbase.TestBase;
 import com.mysql.fabric.Response;
+import com.ahmed.common.utilities.*;
+
+
 
 
 public class ClientMediatorRest extends TestBase {

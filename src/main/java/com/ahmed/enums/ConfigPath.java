@@ -13,5 +13,4 @@ public class ConfigPath {
 	public static final String REST_REQUEST_TEMPLATE_PATH = local_run ? "src/main/conf/templates/rest/request/" : "/opt/seamless/conf/standard-automation/templates/rest/request/";
     public static final String REST_RESPONSE_TEMPLATE_PATH = local_run ? "src/main/conf/templates/rest/response/" : "/opt/seamless/conf/standard-automation/templates/rest/response/";
     public static final String FILE_UPLOAD_PATH = local_run ? "src/main/conf/templates/imports/" : "/opt/seamless/conf/standard-automation/templates/imports/";
-
 }
