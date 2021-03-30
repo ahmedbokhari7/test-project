@@ -1,0 +1,10 @@
+{
+  "channel":"WSClient",
+  "clientId":"ERS",
+  "clientRequestTimeout":"${clientRequestTimeout}",
+  "id":"${id}",
+  "prepareOnly":"${prepareOnly}",
+  "type":"${type}",
+  "password":"${password}",
+  "activationCode":"${activationCode}"
+}

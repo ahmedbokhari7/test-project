@@ -1,0 +1,214 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "required": [
+    "requestedTransferAmountCurrency",
+    "requestedTransferAmountValue",
+    "receivedAmountCurrency",
+    "receivedAmountValue",
+    "receiverPrincipalId",
+    "receiverPrincipalType",
+    "receiverPrincipalName",
+    "receiverAccountId",
+    "receiverAccountTypeId",
+    "receiverBalanceCurrency",
+    "receiverBalanceValue",
+    "receiverCreditLimitCurrency",
+    "receiverCreditLimitValue",
+    "receiverStatus",
+    "receiverMSISDN",
+    "senderPrincipalId",
+    "senderPrincipalType",
+    "senderPrincipalName",
+    "senderAccountId",
+    "senderAccountTypeId",
+    "senderBalanceCurrency",
+    "senderBalanceValue",
+    "senderStatus",
+    "senderMSISDN",
+    "amount",
+    "startTime",
+    "resultCode",
+    "resultDescription",
+    "ersReference",
+    "operationName",
+    "receipt"
+  ],
+  "properties": {
+    "requestedTransferAmountCurrency": {
+      "$id": "#/properties/requestedTransferAmountCurrency",
+      "type": "string",
+      "title": "The requestedTransferAmountCurrency schema"
+    },
+    "requestedTransferAmountValue": {
+      "$id": "#/properties/requestedTransferAmountValue",
+      "type": "number",
+      "title": "The requestedTransferAmountValue schema"
+    },
+    "receivedAmountCurrency": {
+      "$id": "#/properties/receivedAmountCurrency",
+      "type": "string",
+      "title": "The receivedAmountCurrency schema"
+    },
+    "receivedAmountValue": {
+      "$id": "#/properties/receivedAmountValue",
+      "type": "number",
+      "title": "The receivedAmountValue schema"
+    },
+    "receiverPrincipalId": {
+      "$id": "#/properties/receiverPrincipalId",
+      "type": "string",
+      "title": "The receiverPrincipalId schema"
+    },
+    "receiverPrincipalType": {
+      "$id": "#/properties/receiverPrincipalType",
+      "type": "string",
+      "title": "The receiverPrincipalType schema"
+    },
+    "receiverPrincipalName": {
+      "$id": "#/properties/receiverPrincipalName",
+      "type": "string",
+      "title": "The receiverPrincipalName schema"
+    },
+    "receiverAccountId": {
+      "$id": "#/properties/receiverAccountId",
+      "type": "string",
+      "title": "The receiverAccountId schema"
+    },
+    "receiverAccountTypeId": {
+      "$id": "#/properties/receiverAccountTypeId",
+      "type": "string",
+      "title": "The receiverAccountTypeId schema"
+    },
+    "receiverBalanceCurrency": {
+      "$id": "#/properties/receiverBalanceCurrency",
+      "type": "string",
+      "title": "The receiverBalanceCurrency schema"
+    },
+    "receiverBalanceValue": {
+      "$id": "#/properties/receiverBalanceValue",
+      "type": "number",
+      "title": "The receiverBalanceValue schema"
+    },
+    "receiverCreditLimitCurrency": {
+      "$id": "#/properties/receiverCreditLimitCurrency",
+      "type": "string",
+      "title": "The receiverCreditLimitCurrency schema"
+    },
+    "receiverCreditLimitValue": {
+      "$id": "#/properties/receiverCreditLimitValue",
+      "type": "number",
+      "title": "The receiverCreditLimitValue schema"
+    },
+    "receiverStatus": {
+      "$id": "#/properties/receiverStatus",
+      "type": "string",
+      "title": "The receiverStatus schema"
+    },
+    "receiverMSISDN": {
+      "$id": "#/properties/receiverMSISDN",
+      "type": "string",
+      "title": "The receiverMSISDN schema"
+    },
+    "senderPrincipalId": {
+      "$id": "#/properties/senderPrincipalId",
+      "type": "string",
+      "title": "The senderPrincipalId schema"
+    },
+    "senderPrincipalType": {
+      "$id": "#/properties/senderPrincipalType",
+      "type": "string",
+      "title": "The senderPrincipalType schema"
+    },
+    "senderPrincipalName": {
+      "$id": "#/properties/senderPrincipalName",
+      "type": "string",
+      "title": "The senderPrincipalName schema"
+    },
+    "senderAccountId": {
+      "$id": "#/properties/senderAccountId",
+      "type": "string",
+      "title": "The senderAccountId schema"
+    },
+    "senderAccountTypeId": {
+      "$id": "#/properties/senderAccountTypeId",
+      "type": "string",
+      "title": "The senderAccountTypeId schema"
+    },
+    "senderBalanceCurrency": {
+      "$id": "#/properties/senderBalanceCurrency",
+      "type": "string",
+      "title": "The senderBalanceCurrency schema"
+    },
+    "senderBalanceValue": {
+      "$id": "#/properties/senderBalanceValue",
+      "type": "number",
+      "title": "The senderBalanceValue schema"
+    },
+    "senderStatus": {
+      "$id": "#/properties/senderStatus",
+      "type": "string",
+      "title": "The senderStatus schema"
+    },
+    "senderMSISDN": {
+      "$id": "#/properties/senderMSISDN",
+      "type": "string",
+      "title": "The senderMSISDN schema"
+    },
+    "amount": {
+      "$id": "#/properties/amount",
+      "type": "object",
+      "title": "The amount schema",
+      "required": [
+        "value",
+        "currency"
+      ],
+      "properties": {
+        "value": {
+          "$id": "#/properties/amount/properties/value",
+          "type": "number",
+          "title": "The value schema"
+        },
+        "currency": {
+          "$id": "#/properties/amount/properties/currency",
+          "type": "string",
+          "title": "The currency schema"
+        }
+      },
+      "additionalProperties": true
+    },
+    "startTime": {
+      "$id": "#/properties/startTime",
+      "type": "string",
+      "title": "The startTime schema"
+    },
+    "resultCode": {
+      "$id": "#/properties/resultCode",
+      "type": "integer",
+      "title": "The resultCode schema"
+    },
+    "resultDescription": {
+      "$id": "#/properties/resultDescription",
+      "type": "string",
+      "title": "The resultDescription schema"
+    },
+    "ersReference": {
+      "$id": "#/properties/ersReference",
+      "type": "string",
+      "title": "The ersReference schema"
+    },
+    "operationName": {
+      "$id": "#/properties/operationName",
+      "type": "string",
+      "title": "The operationName schema"
+    },
+    "receipt": {
+      "$id": "#/properties/receipt",
+      "type": "string",
+      "title": "The receipt schema"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,39 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://external.interfaces.ers.seamless.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<ext:requestPurchase>
+<context>
+<initiatorPrincipalId>
+<id>${initiatorPrincipalId}</id>
+<type>${initiatorPrincipalType}</type>
+<userId>${initiatorPrincipalUserId}</userId>
+</initiatorPrincipalId>
+<password>${password}</password>
+</context>
+<purchaseOrder>
+<!--Zero or more repetitions:-->
+<productSpecifier>
+<productId>${productId}</productId>
+<productIdType>${productIdType}</productIdType>
+</productSpecifier>
+<purchaseCount>${purchaseCount}</purchaseCount>
+</purchaseOrder>
+<!--Optional:-->
+<extraFields>
+<!--Zero or more repetitions:-->
+<entry>
+<!--Optional:-->
+<key>${key1}</key>
+<!--Optional:-->
+<value>${orderInfo}</value>
+</entry>
+<entry>
+<!--Optional:-->
+<key>${key2}</key>
+<!--Optional:-->
+<value>${receiptFormatId}</value>
+</entry>
+</extraFields>
+</ext:requestPurchase>
+</soapenv:Body>
+</soapenv:Envelope>

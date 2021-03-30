@@ -1,0 +1,10 @@
+{
+  "channel": "WSClient",
+  "clientId": "ERS",
+  "clientRequestTimeout": "${clientRequestTimeout}",
+  "id":"${id}",
+  "type": "${type}",
+  "userId": "${userId}",
+  "password": "${password}",
+  "transactionReference" : "${transactionReference}"
+}

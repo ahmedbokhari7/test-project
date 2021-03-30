@@ -1,0 +1,28 @@
+<Resellers>
+<Reseller reseller_type_id="RESELLER_TYPE_ID" contract_id="CONTRACT_ID" subgroup="" name="NAME"
+subsubgroup="" group="GROUP" store_id="RESELLER_ID" reseller_id="RESELLER_ID"
+parent_reseller_id="PARENT_RESELLER_ID" language="en">
+
+<Terminals product_range="standard" receipt_template="standard">
+<AssignTerminal serial="TERMINAL_ID" address_lock="MSISDN" activation_code="ACTIVATION_CODE"
+default_user_id="9900" pre_activate="PRE_ACTIVATE"/>
+</Terminals>
+
+<Users>
+<User user_id="9900" password="PIN" role_id="POS">
+</User>
+<User user_id="webuser" password="20162016"
+role_id="Reseller">
+</User>
+<User user_id="webadmin" password="20162016"
+role_id="Reseller_admin">
+</User>
+</Users>
+<Accounts auto_create="false">
+<Account account_id="RESELLER_ID" transaction_limit_count="0"
+credit_limit_period="0" credit_limit="200000"
+total_credit_limit="0"
+unique="true" auto_create="true" account_type_id="ACCOUNT_TYPE_ID"></Account>
+</Accounts>
+</Reseller>
+</Resellers>

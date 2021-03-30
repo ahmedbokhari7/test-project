@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "The topup failure response schema",
+  "required": [
+    "requestedTopupAmountValue",
+    "requestedTopupAmountCurrency",
+    "senderPrincipalId",
+    "senderPrincipalType",
+    "senderPrincipalName",
+    "senderAccountId",
+    "senderStatus",
+    "senderMSISDN",
+    "topupPrincipalId",
+    "topupPrincipalType",
+    "topupPrincipalName",
+    "startTime",
+    "resultCode",
+    "resultDescription",
+    "ersReference",
+    "operationName"
+  ],
+  "properties": {
+    "requestedTopupAmountValue": {
+      "type": "number",
+      "examples": [
+        1000.0
+      ]
+    },
+    "requestedTopupAmountCurrency": {
+      "type": "string",
+      "examples": [
+        "USD"
+      ]
+    },
+    "senderPrincipalId": {
+      "type": "string",
+      "examples": [
+        "DIST1"
+      ]
+    },
+    "senderPrincipalType": {
+      "type": "string",
+      "examples": [
+        "RESELLERID"
+      ]
+    },
+    "senderPrincipalName": {
+      "type": "string",
+      "examples": [
+        "Distributor 1"
+      ]
+    },
+    "senderAccountId": {
+      "type": "string",
+      "examples": [
+        "DIST1"
+      ]
+    },
+    "senderStatus": {
+      "type": "string",
+      "examples": [
+        "Active"
+      ]
+    },
+    "senderMSISDN": {
+      "type": "string",
+      "default": "",
+      "examples": [
+        "16010000"
+      ]
+    },
+    "topupPrincipalId": {
+      "type": "string",
+      "examples": [
+        "16010111"
+      ]
+    },
+    "topupPrincipalType": {
+      "type": "string",
+      "examples": [
+        "SUBSCRIBERID"
+      ]
+    },
+    "topupPrincipalName": {
+      "type": "string",
+      "examples": [
+        ""
+      ]
+    },
+    "startTime": {
+      "type": "string",
+      "examples": [
+        "Aug 10, 2020 9:31:25 AM"
+      ]
+    },
+    "resultCode": {
+      "type": "integer",
+      "examples": [
+        0
+      ]
+    },
+    "resultDescription": {
+      "type": "string",
+      "examples": [
+        "You have topped up 1,000.00 USD to 16010111. Your balance is now 49,999,000.00 USD. ref: 2020081009312528501000521"
+      ]
+    },
+    "ersReference": {
+      "type": "string",
+      "examples": [
+        "2020081009312528501000521"
+      ]
+    },
+    "operationName": {
+      "type": "string",
+      "examples": [
+        "TopUp"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

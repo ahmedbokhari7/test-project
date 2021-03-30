@@ -1,0 +1,5 @@
+<Terminals>
+<ImprintTerminal serial="TERMINAL_SERIAL" terminal_class="Phone">
+<EncryptionKey type="3DES" format="HEX">449C278CDBF9B0EE6E1273570BC0B3F5</EncryptionKey>
+</ImprintTerminal>
+</Terminals>

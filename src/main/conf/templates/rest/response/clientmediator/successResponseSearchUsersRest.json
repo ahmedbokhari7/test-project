@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "required": [
+    "transaction",
+    "maxCount",
+    "resultCode",
+    "resultDescription",
+    "operationName"
+  ],
+  "properties": {
+    "transaction": {
+      "$id": "#/properties/transaction",
+      "type": "object",
+      "title": "The transaction schema",
+      "required": [
+        "principals",
+        "maxCount",
+        "truncatedResult",
+        "totolCount",
+        "resultCode"
+      ],
+      "properties": {
+        "principals": {
+          "$id": "#/properties/transaction/properties/principals",
+          "type": "array",
+          "title": "The principals schema",
+          "items": {
+            "$id": "#/properties/transaction/properties/principals/items"
+          }
+        },
+        "maxCount": {
+          "$id": "#/properties/transaction/properties/maxCount",
+          "type": "integer",
+          "title": "The maxCount schema"
+        },
+        "truncatedResult": {
+          "$id": "#/properties/transaction/properties/truncatedResult",
+          "type": "boolean",
+          "title": "The truncatedResult schema"
+        },
+        "totolCount": {
+          "$id": "#/properties/transaction/properties/totolCount",
+          "type": "integer",
+          "title": "The totolCount schema"
+        },
+        "resultCode": {
+          "$id": "#/properties/transaction/properties/resultCode",
+          "type": "integer",
+          "title": "The resultCode schema"
+        }
+      },
+      "additionalProperties": true
+    },
+    "maxCount": {
+      "$id": "#/properties/maxCount",
+      "type": "integer",
+      "title": "The maxCount schema"
+    },
+    "resultCode": {
+      "$id": "#/properties/resultCode",
+      "type": "integer",
+      "title": "The resultCode schema"
+    },
+    "resultDescription": {
+      "$id": "#/properties/resultDescription",
+      "type": "string",
+      "title": "The resultDescription schema"
+    },
+    "operationName": {
+      "$id": "#/properties/operationName",
+      "type": "string",
+      "title": "The operationName schema"
+    }
+  },
+  "additionalProperties": false
+}

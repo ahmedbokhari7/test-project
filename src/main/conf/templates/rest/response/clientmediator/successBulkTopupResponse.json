@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "array",
+  "title": "The root schema",
+  "additionalItems": true,
+  "items": {
+    "$id": "#/items",
+    "anyOf": [
+      {
+        "type": "object",
+        "title": "The first anyOf schema",
+        "required": [
+          "requestedTopupAmountValue",
+          "requestedTopupAmountCurrency",
+          "senderPrincipalId",
+          "senderPrincipalType",
+          "senderPrincipalName",
+          "senderAccountId",
+          "senderBalanceCurrency",
+          "senderBalanceValue",
+          "senderStatus",
+          "senderMSISDN",
+          "topupPrincipalId",
+          "topupPrincipalType",
+          "startTime",
+          "resultCode",
+          "resultDescription",
+          "ersReference",
+          "operationName",
+          "receipt"
+        ],
+        "properties": {
+          "requestedTopupAmountValue": {
+            "type": "number",
+            "title": "The requestedTopupAmountValue schema"
+          },
+          "requestedTopupAmountCurrency": {
+            "type": "string",
+            "title": "The requestedTopupAmountCurrency schema"
+          },
+          "senderPrincipalId": {
+            "type": "string",
+            "title": "The senderPrincipalId schema"
+          },
+          "senderPrincipalType": {
+            "type": "string",
+            "title": "The senderPrincipalType schema"
+          },
+          "senderPrincipalName": {
+            "type": "string",
+            "title": "The senderPrincipalName schema"
+          },
+          "senderAccountId": {
+            "type": "string",
+            "title": "The senderAccountId schema"
+          },
+          "senderBalanceCurrency": {
+            "type": "string",
+            "title": "The senderBalanceCurrency schema"
+          },
+          "senderBalanceValue": {
+            "type": "number",
+            "title": "The senderBalanceValue schema"
+          },
+          "senderStatus": {
+            "type": "string",
+            "title": "The senderStatus schema"
+          },
+          "senderMSISDN": {
+            "type": "string",
+            "title": "The senderMSISDN schema"
+          },
+          "topupPrincipalId": {
+            "type": "string",
+            "title": "The topupPrincipalId schema"
+          },
+          "topupPrincipalType": {
+            "type": "string",
+            "title": "The topupPrincipalType schema"
+          },
+          "topupPrincipalName": {
+            "type": "string",
+            "title": "The topupPrincipalName schema"
+          },
+          "topupBalanceCurrency": {
+            "type": "string",
+            "title": "The topupBalanceCurrency schema"
+          },
+          "topupBalanceValue": {
+            "type": "number",
+            "title": "The topupBalanceValue schema"
+          },
+          "startTime": {
+            "type": "string",
+            "title": "The startTime schema"
+          },
+          "resultCode": {
+            "type": "integer",
+            "title": "The resultCode schema"
+          },
+          "resultDescription": {
+            "type": "string",
+            "title": "The resultDescription schema"
+          },
+          "ersReference": {
+            "type": "string",
+            "title": "The ersReference schema"
+          },
+          "operationName": {
+            "type": "string",
+            "title": "The operationName schema"
+          },
+          "receipt": {
+            "type": "string",
+            "title": "The receipt schema"
+          }
+        },
+        "additionalProperties": true
+      }
+    ]
+  }
+}

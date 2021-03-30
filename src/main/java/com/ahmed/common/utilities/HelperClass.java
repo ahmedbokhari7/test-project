@@ -3,6 +3,7 @@
  */
 /**
  * @author ahmedbokhari
+
  *
  */
 package com.ahmed.common.utilities;
@@ -91,6 +92,11 @@ public class HelperClass {
         log.info("USSD url: "+url);
         return url;
     }
+
+	public String returnRestBaseUri() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

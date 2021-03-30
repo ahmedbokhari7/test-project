@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "required": [
+    "requestedTopupAmountValue",
+    "requestedTopupAmountCurrency",
+    "senderPrincipalId",
+    "senderPrincipalType",
+    "topupPrincipalId",
+    "topupPrincipalType",
+    "startTime",
+    "resultCode",
+    "resultDescription",
+    "ersReference",
+    "operationName",
+    "receipt"
+  ],
+  "properties": {
+    "requestedTopupAmountValue": {
+      "$id": "#/properties/requestedTopupAmountValue",
+      "type": "number",
+      "title": "The requestedTopupAmountValue schema"
+    },
+    "requestedTopupAmountCurrency": {
+      "$id": "#/properties/requestedTopupAmountCurrency",
+      "type": "string",
+      "title": "The requestedTopupAmountCurrency schema"
+    },
+    "senderPrincipalId": {
+      "$id": "#/properties/senderPrincipalId",
+      "type": "string",
+      "title": "The senderPrincipalId schema"
+    },
+    "senderPrincipalType": {
+      "$id": "#/properties/senderPrincipalType",
+      "type": "string",
+      "title": "The senderPrincipalType schema"
+    },
+    "topupPrincipalId": {
+      "$id": "#/properties/topupPrincipalId",
+      "type": "string",
+      "title": "The topupPrincipalId schema"
+    },
+    "topupPrincipalType": {
+      "$id": "#/properties/topupPrincipalType",
+      "type": "string",
+      "title": "The topupPrincipalType schema"
+    },
+    "startTime": {
+      "$id": "#/properties/startTime",
+      "type": "string",
+      "title": "The startTime schema"
+    },
+    "resultCode": {
+      "$id": "#/properties/resultCode",
+      "type": "integer",
+      "title": "The resultCode schema"
+    },
+    "resultDescription": {
+      "$id": "#/properties/resultDescription",
+      "type": "string",
+      "title": "The resultDescription schema"
+    },
+    "ersReference": {
+      "$id": "#/properties/ersReference",
+      "type": "string",
+      "title": "The ersReference schema"
+    },
+    "operationName": {
+      "$id": "#/properties/operationName",
+      "type": "string",
+      "title": "The operationName schema"
+    },
+    "receipt": {
+      "$id": "#/properties/receipt",
+      "type": "string",
+      "title": "The receipt schema"
+    }
+  },
+  "additionalProperties": true
+}

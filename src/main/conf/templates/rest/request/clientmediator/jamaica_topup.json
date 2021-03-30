@@ -1,0 +1,35 @@
+{
+  "topupRequest":{
+    "amount":{
+      "currency":"BSD",
+      "value":"12"
+    },
+    "bundleSales":false,
+    "bahamasNumber":"1234567",
+    "clientContext":{
+      "transactionProperties":{
+        "entry":[
+          {
+            "key":"receiverCountryKey",
+            "value":"jamaica"
+          }
+        ]
+      }
+    },
+    "displayMSISDN": "3381234",
+    "productId":"Digicel_Jamaica_Topup",
+    "senderAccountSpecifier":{
+      "accountId":"DIST1",
+      "accountTypeId":"RESELLER"
+    },
+    "topupAccountSpecifier":{
+      "accountId":"18763381234",
+      "accountTypeId":"AIRTIME"
+    },
+    "topupPrincipalId":{
+      "id":"18763381234",
+      "type":"SUBSCRIBERMSISDN",
+      "userId":null
+    }
+  }
+}

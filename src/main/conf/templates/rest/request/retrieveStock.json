@@ -1,0 +1,21 @@
+{
+  "channel": "WSClient",
+  "clientId": "ERS",
+  "clientRequestTimeout": "${clientRequestTimeout}",
+  "id":"${id}",
+  "type": "${type}",
+  "userId": "${userId}",
+  "password": "${password}",
+  "senderPrincipalId":"${senderPrincipalId}",
+  "senderPrincipalType":"${senderPrincipalType}",
+  "senderPrincipalUserId":"${senderPrincipalUserId}",
+  "retrievePrincipalId":"${retrievePrincipalId}",
+  "retrievePrincipalType": "${retrievePrincipalType}",
+  "retrievePrincipalUserId": "${retrievePrincipalUserId}",
+  "senderAccountId": "${senderAccountId}",
+  "senderAccountTypeId": "${senderAccountTypeId}",
+  "retrieveAccountSpecifierTypeId":"${retrieveAccountSpecifierTypeId}",
+  "productId":"${productId}",
+  "currency":"${currency}",
+  "value":"${value}"
+}

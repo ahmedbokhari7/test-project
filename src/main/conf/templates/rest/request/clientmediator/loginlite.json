@@ -1,0 +1,12 @@
+{
+  "clientContext":{
+    "clientId":"Web",
+    "clientReference":"1234",
+    "initiatorPrincipalId":{
+      "id":"dist1",
+      "type":"RESELLERUSER",
+      "userId":"webadmin"
+    },
+    "password":"20162016"
+  }
+}

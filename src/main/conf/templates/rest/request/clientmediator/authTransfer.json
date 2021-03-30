@@ -1,0 +1,18 @@
+{
+  "transferRequest":{
+    "receiverPrincipalId":{
+      "id":"SUBDIST1-1",
+      "type":"RESELLERID",
+      "userId":""
+    },
+    "bundleSales":"false",
+    "receiverAccountSpecifier":{
+      "accountTypeId":"RESELLER"
+    },
+    "productId":"TRANSFER",
+    "amount":{
+      "currency":"BSD",
+      "value":"1000.00"
+    }
+  }
+}

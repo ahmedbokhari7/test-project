@@ -1,0 +1,18 @@
+{
+  "channel": "WSClient",
+  "clientId": "ERS",
+  "clientRequestTimeout": "${clientRequestTimeout}",
+  "id":"${id}",
+  "type": "${type}",
+  "password": "${password}",
+  "customerPrincipalId":"${customerPrincipalId}",
+  "customerPrincipalType":"${customerPrincipalType}",
+  "targetPrincipalId":"${targetPrincipalId}",
+  "targetPrincipalType":"${targetPrincipalType}",
+  "senderAccountTypeId": "${senderAccountTypeId}",
+  "operationId":"${operationId}",
+  "operationParameters.key1":"${operationParametersKey1}",
+  "operationParameters.value1":"${operationParametersValue1}",
+  "operationParameters.key2":"${operationParametersKey2}",
+  "operationParameters.value2":"${operationParametersValue2}"
+}

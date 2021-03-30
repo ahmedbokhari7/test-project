@@ -1,0 +1,13 @@
+{
+  "channel":"WSClient",
+  "clientId":"ERS",
+  "clientRequestTimeout":"${clientRequestTimeout}",
+  "id":"${id}",
+  "type":"${type}",
+  "userId":"${userId}",
+  "password":"${password}",
+  "prepareOnly":"false",
+  "resellerPrincipalId":"${resellerPrincipalId}",
+  "resellerPrincipalUserId":"${resellerPrincipalUserId}",
+  "resellerPrincipalType":"${resellerPrincipalType}"
+}

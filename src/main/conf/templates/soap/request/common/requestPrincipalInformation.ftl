@@ -1,0 +1,55 @@
+<soapJobRequestPrincipalInformation>
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                      xmlns:ext="http://external.interfaces.ers.seamless.com/">
+        <soapenv:Header/>
+        <soapenv:Body>
+            <ext:requestPrincipalInformation>
+                <!--Optional:-->
+                <context>
+                    <!--Optional:-->
+                    <channel>WSClient</channel>
+                    <!--Optional:-->
+                    <clientComment>?</clientComment>
+                    <!--Optional:-->
+                    <clientId>ERS</clientId>
+                    <!--Optional:-->
+                    <prepareOnly>false</prepareOnly>
+                    <!--Optional:-->
+                    <clientReference>?</clientReference>
+                    <clientRequestTimeout>500</clientRequestTimeout>
+                    <!--Optional:-->
+                    <initiatorPrincipalId>
+                        <!--Optional:-->
+                        <id>${reseller.getReseller(2,0).getResellerId()}</id>
+                        <!--Optional:-->
+                        <type>RESELLERUSER</type>
+                        <!--Optional:-->
+                        <userId>${reseller.getReseller(2,0).getPosUserId()}</userId>
+                    </initiatorPrincipalId>
+                    <!--Optional:-->
+                    <password>${reseller.getReseller(2,0).getPosPassword()}</password>
+                    <!--Optional:-->
+                    <transactionProperties>
+                        <!--Zero or more repetitions:-->
+                        <entry>
+                            <!--Optional:-->
+                            <key>?</key>
+                            <!--Optional:-->
+                            <value>?</value>
+                        </entry>
+                    </transactionProperties>
+                </context>
+                <!--Optional:-->
+                <principalId>
+                    <!--Optional:-->
+                    <id>${reseller.getReseller(2,0).getResellerId()}</id>
+                    <!--Optional:-->
+                    <type>RESELLERUSER</type>
+                    <!--Optional:-->
+                    <userId>${reseller.getReseller(2,0).getPosUserId()}</userId>
+                </principalId>
+                <nativeReslutCode>0</nativeReslutCode>
+            </ext:requestPrincipalInformation>
+        </soapenv:Body>
+    </soapenv:Envelope>
+</soapJobRequestPrincipalInformation>

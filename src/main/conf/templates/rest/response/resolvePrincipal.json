@@ -1,0 +1,18 @@
+{
+  "targetPrincipalName": "${targetPrincipalName}",
+  "targetAccountDescription": "${targetAccountDescription}",
+  "targetAccountId": "${targetAccountId}",
+  "targetAccountTypeId": "${targetAccountTypeId}",
+  "targetBalanceCurrency": "${targetBalanceCurrency}",
+  "targetBalanceValue": ${targetBalanceValue},
+  "targetCreditLimitCurrency": "${targetCreditLimitCurrency}",
+  "targetCreditLimitValue": ${targetCreditLimitValue},
+  "targetStatus": "${targetStatus}",
+  "targetMSISDN": "${targetMSISDN}",
+  "resultCode": 0,
+  "resultDescription": "SUCCESS",
+  "ersReference": "2016081814335211701000058",
+  "requestedPrincipalId": "${requestedPrincipalId}",
+  "requestedPrincipalType": "${requestedPrincipalType}",
+  "operationName": "ResolvePrincipal"
+}

@@ -1,0 +1,33 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+<ns2:requestPrincipalInformationResponse xmlns:ns2="http://external.interfaces.ers.seamless.com/">
+<return>
+<ersReference>${ersReference}</ersReference>
+<resultCode>0</resultCode>
+<resultDescription>SUCCESS</resultDescription>
+<requestedPrincipal>
+<principalId>
+<id>${principalId}</id>
+<type>${principalType}</type>
+</principalId>
+<principalName></principalName>
+<accounts>
+<account>
+<accountDescription>${accountDescription}</accountDescription>
+<accountSpecifier>
+<accountId>${accountId}</accountId>
+<accountTypeId>${accountTypeId}</accountTypeId>
+</accountSpecifier>
+<balance>
+<currency>${currency}</currency>
+<value>${balance}</value>
+</balance>
+</account>
+</accounts>
+</requestedPrincipal>
+<accountClass>${accountClass}</accountClass>
+<userId>${principalUserId}</userId>
+</return>
+</ns2:requestPrincipalInformationResponse>
+</soap:Body>
+</soap:Envelope>

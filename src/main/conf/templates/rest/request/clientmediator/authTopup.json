@@ -1,0 +1,17 @@
+{
+  "topupRequest": {
+    "topupPrincipalId": {
+      "id": "16010111",
+      "type": "SUBSCRIBERMSISDN",
+      "userId": ""
+    },
+    "senderAccountSpecifier":{
+      "accountId":"DIST1",
+      "accountTypeId":"RESELLER"
+    },
+    "amount": {
+      "currency": "BSD",
+      "value": "1000.00"
+    }
+  }
+}
