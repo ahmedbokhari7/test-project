@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.ahmed.rest.restapi.RestService" hash-for-method="addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;request...)">addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.ahmed.rest.restapi.RestService" hash-for-method="addBook({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;request...)">addBook({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -127,9 +127,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;request...)">
-                  </a> <!-- addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...) -->
-                  <span class="method-name">addAccountType</span>
+                  <a name="addBook({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;request...)">
+                  </a> <!-- addBook({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...) -->
+                  <span class="method-name">addBook</span>
                   <span class="parameters">({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<requestParameters><![CDATA[
 					header|||Content-Type|||application/json
                     jsonBody|||isbn|||foo
@@ -142,30 +142,46 @@
                     jsonBody|||msg|||Success Book is Added]]>
 				</responseParameters>
 , expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table})</span>
-                  <div class="stack-trace">java.lang.NoClassDefFoundError: groovy/lang/GroovyObject
-	at java.lang.ClassLoader.defineClass1(Native Method)
-	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
-	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
-	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
-	at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at io.restassured.RestAssured.&lt;clinit&gt;(RestAssured.java:347)
-	at com.ahmed.common.utilities.RestAPIHelper.performRestTransaction(RestAPIHelper.java:52)
-	at com.ahmed.rest.restapi.RestService.addAccountType(RestService.java:51)
+                  <div class="stack-trace">java.lang.IllegalArgumentException: path cannot be null
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1598)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:816)
+	at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at io.restassured.internal.RequestSpecificationImpl.request(RequestSpecificationImpl.groovy:295)
+	at io.restassured.internal.RequestSpecificationImpl.request(RequestSpecificationImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:816)
+	at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at io.restassured.internal.RequestSpecificationImpl.request(RequestSpecificationImpl.groovy:291)
+	at io.restassured.internal.RequestSpecificationImpl.request(RequestSpecificationImpl.groovy)
+	at com.ahmed.utilities.restassured.RequestProcessingUtilities.sendRequest(RequestProcessingUtilities.java:72)
+	at com.ahmed.common.utilities.RestAPIHelper.performRestTransaction(RestAPIHelper.java:50)
+	at com.ahmed.rest.restapi.RestService.addBook(RestService.java:54)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-Caused by: java.lang.ClassNotFoundException: groovy.lang.GroovyObject
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	... 43 more
-... Removed 27 stack frames
+... Removed 43 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -216,7 +232,7 @@ Caused by: java.lang.ClassNotFoundException: groovy.lang.GroovyObject
               <span class="test-group-name">add-book</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">addAccountType</span>
+                <span class="method-in-group-name">addBook</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -238,14 +254,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'addAccountType')
+data.setCell(0, 1, 'addBook')
 data.setCell(0, 2, 'com.ahmed.rest.restapi.RestService')
-data.setCell(0, 3, 9);
+data.setCell(0, 3, 741);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 ms</span>
+              <span class="suite-total-time">Total running time: 741 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -278,17 +294,17 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">71 ms</span>
+                <span class="method-start">87 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...)</span>
-                <span class="method-start">72 ms</span>
+                <span class="method-name">addBook({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...)</span>
+                <span class="method-start">88 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">5125 ms</span>
+                <span class="method-start">5895 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

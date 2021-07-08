@@ -10,7 +10,7 @@
     <classes>
       <class name="com.ahmed.rest.restapi.RestService">
         <methods>
-          <include name="addAccountType" invocation-numbers="0"/>
+          <include name="addBook" invocation-numbers="0"/>
           <include name="afterSuite"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>

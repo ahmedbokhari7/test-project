@@ -1,23 +1,18 @@
 package com.ahmed.utilities.restassured;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
+
+
+import com.jayway.jsonpath.DocumentContext;
 import com.ahmed.common.utilities.ConfigPropertyReader;
 import com.ahmed.common.utilities.HelperClass;
 import com.ahmed.common.utilities.Utilities;
 import com.ahmed.enums.ConfigPath;
-import com.jayway.jsonpath.DocumentContext;
 
+import io.restassured.RestAssured;
 import io.restassured.builder.MultiPartSpecBuilder;
+import io.restassured.config.EncoderConfig;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
@@ -26,6 +21,19 @@ import io.restassured.internal.print.ResponsePrinter;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+
+
 
 /**
  * Created by ahmed bokahri on 01/02/21.
@@ -39,19 +47,24 @@ public class RequestProcessingUtilities
 
 
 	public Response sendRequest(RequestSpecification specification,Method requestType, String urlKey, Map<String,String> testdata,String component,String fileKey,String cdataKey,Map<String,Response> prevResponseMap) {
+		System.out.println("AHMED HERE 4");
 		String url = reader.readProperties(urlKey);
 		if(component != null && !component.isEmpty())
 			specification.baseUri(helperClass.returnRestBaseUri(component));
 		else
 			specification.baseUri(helperClass.returnRestBaseUri());
 		if(testdata!=null && !testdata.isEmpty()) {
+			System.out.println("AHMED HERE 5");
 			HashMap<String, HashMap<String, String>> extractedinfo = Utilities.getInstance().CdataToMap(testdata, cdataKey,prevResponseMap);
+		
 			specification = addJsonBody(specification, extractedinfo.get("jsonBody"), component, testdata.get("version"), testdata.get(fileKey));
+			
 			specification = addMultiPartContent(specification, extractedinfo.get("formData"),extractedinfo, component, testdata.get("version"), testdata.get(fileKey));
 			specification = addparams(specification, extractedinfo.get("pathParam"), true);
 			specification = addparams(specification, extractedinfo.get("param"), false);
 			specification = addheaders(specification, extractedinfo.get("header"));
 		}
+	
 		log.debug(RequestPrinter.print((FilterableRequestSpecification) specification, requestType.name(),
 				((FilterableRequestSpecification) specification).getBaseUri() + url, LogDetail.ALL,
 				Collections.emptySet(), System.out, true));
@@ -63,7 +76,7 @@ public class RequestProcessingUtilities
 
 		return response;
 	}
-	
+		
 	/**
      * 
      * @param specification
@@ -156,13 +169,17 @@ public class RequestProcessingUtilities
 
 	public RequestSpecification addJsonBody(RequestSpecification spec, Map<String,String> jsonPathsMap, String component, String version, String filename){
 		if (jsonPathsMap !=null && !jsonPathsMap.isEmpty()) {
+		
 			String filepath=ConfigPath.REST_REQUEST_TEMPLATE_PATH + component.toLowerCase()
 					+ (null == version || version.isEmpty() ?
 					"/" : "_" + version.replace(".", "_") + "/")
 					+ filename;
+			System.out.println("file path "+filepath);
 			try {
 				String requestFromFile = FileUtils.readFileToString(new File(filepath), StandardCharsets.UTF_8);
+				System.out.println(requestFromFile);
 				String payload = modifyJsonWithParameter(requestFromFile, jsonPathsMap);
+			
 				spec.body(payload);
 
 			} catch (IOException e) {
@@ -185,8 +202,10 @@ public class RequestProcessingUtilities
     }
 
 	private String modifyJsonWithParameter(String originalJsonString, Map<String,String> parameterMap){
+		System.out.println("AHMED HERE 6");
 		com.jayway.jsonpath.Configuration config = com.jayway.jsonpath.Configuration.defaultConfiguration();
 		DocumentContext jsonDocContext = com.jayway.jsonpath.JsonPath.using(config).parse(originalJsonString);
+		
 		for(String jsonPathParameter : parameterMap.keySet()) {
 			try {
 				setRequestParam(jsonDocContext,jsonPathParameter,parameterMap);

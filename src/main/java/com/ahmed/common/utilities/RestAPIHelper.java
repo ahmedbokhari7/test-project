@@ -3,6 +3,7 @@ package com.ahmed.common.utilities;
 import java.util.HashMap;
 
 
+
 import java.util.Map;
 
 import com.ahmed.utilities.restassured.RequestProcessingUtilities;
@@ -22,6 +23,7 @@ public class RestAPIHelper
 	//private static final ResponseProcessingUtilities responseProcessingUtilities = new ResponseProcessingUtilities();
 	private RestAPIHelper() {
 		log.info("RestHelper Initialized");
+		System.out.println("RestHelper Initialized");
 	}
 
 	public static class RestAPIHelperModule {
@@ -45,19 +47,8 @@ public class RestAPIHelper
 	 */
 
 	public Response performRestTransaction(Map<String,String> testdata, String requestType,String resource,String requesTemplateFileName,String cdataKey,String component,Map<String,Response> prevResponseMap) {
-		switch(requestType){
-			case("GET"):
-				return  requestProcessingUtilities.sendRequest(RestAssured.given(), Method.GET, testdata.get(resource), testdata, component, requesTemplateFileName, cdataKey, prevResponseMap);
-			case("POST"):
-				return requestProcessingUtilities.sendRequest(RestAssured.given(), Method.POST, testdata.get(resource), testdata, component, requesTemplateFileName, cdataKey, prevResponseMap);
-			case("PUT"):
-				return  requestProcessingUtilities.sendRequest(RestAssured.given(), Method.PUT, testdata.get(resource), testdata, component, requesTemplateFileName, cdataKey, prevResponseMap);
-			case("DELETE"):
-				return  requestProcessingUtilities.sendRequest(RestAssured.given(), Method.DELETE, testdata.get(resource), testdata, component, "", cdataKey, prevResponseMap);
-			default:
-				return  requestProcessingUtilities.sendRequest(RestAssured.given(), Method.GET, testdata.get(resource), testdata, component, requesTemplateFileName, cdataKey, prevResponseMap);
+		return requestProcessingUtilities.sendRequest(RestAssured.given(), Method.POST, testdata.get(resource), testdata, component, requesTemplateFileName, cdataKey, prevResponseMap);	
 		}
-	}
 
 	/**
 	 * Method that orchestrate the checks to be done: - check on response code -

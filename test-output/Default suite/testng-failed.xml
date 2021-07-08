@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ahmed.ussd.stringbased.ErsUssdStringBased">
+      <class name="com.ahmed.rest.restapi.RestService">
         <methods>
+          <include name="addBook" invocation-numbers="0"/>
           <include name="afterSuite"/>
-          <include name="beforeSuite"/>
           <include name="beforeMethod"/>
-          <include name="tearDownMethod"/>
-          <include name="verifyCreditTransfer" invocation-numbers="0"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- com.ahmed.ussd.stringbased.ErsUssdStringBased -->
+      </class> <!-- com.ahmed.rest.restapi.RestService -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

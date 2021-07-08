@@ -27,22 +27,27 @@ public class HelperClass {
 	private Product product = Product.ERS;
 	private final boolean skipBugs;
 	private String restHost;
+	String testDataFile="src/test/resources/customer/ers-std/test-data/data_ers.xml";
 	private static ConfigPropertyReader reader = ConfigPropertyReader.getInstance();
 
 	public HelperClass() {
-
-		if (System.getProperty("testDataFile") != null
-				&& (FilenameUtils.getExtension(System.getProperty("testDataFile")).equalsIgnoreCase("xml")
-						|| FilenameUtils.getExtension(System.getProperty("testDataFile")).equalsIgnoreCase("json"))) {
-			xmlDataSet = System.getProperty("testDataFile");
-			System.out.println("AHMED 1");
-			log.debug("Provided test data source path: " + xmlDataSet);
-		} else {
-			System.out.println("AHMED 2");
-			xmlDataSet = ConfigPath.DEFAULT_TEST_DATA + customer.getCustomer() + "/test-data/data_"
-					+ product.getProductName() + ".xml";
-			log.warn("No or invalid test data file provided. Taking " + xmlDataSet + " by default");
-		}
+		
+		System.out.println("AHMED HERE 1");
+//		System.out.println(System.getProperty("testDataFile"));
+//		if (System.getProperty("testDataFile") != null
+//				&& (FilenameUtils.getExtension(System.getProperty("testDataFile")).equalsIgnoreCase("xml")
+//						|| FilenameUtils.getExtension(System.getProperty("testDataFile")).equalsIgnoreCase("json"))) {
+//			xmlDataSet = System.getProperty("testDataFile");
+//			System.out.println("AHMED 1");
+//			log.debug("Provided test data source path: " + xmlDataSet);
+//		} else {
+//			System.out.println("AHMED 2");
+//			xmlDataSet = ConfigPath.DEFAULT_TEST_DATA + customer.getCustomer() + "/test-data/data_"
+//					+ product.getProductName() + ".xml";
+//			log.warn("No or invalid test data file provided. Taking " + xmlDataSet + " by default");
+//		}
+		xmlDataSet=testDataFile;
+		
 
 		if (System.getProperty("skipBugs") != null)
 			skipBugs = Boolean.getBoolean("skipBugs");
@@ -107,6 +112,7 @@ public class HelperClass {
 			String server = "localhost";
 			uri = restProtocol + server + restPort;
 			log.info("Generated REST API url: "+uri);
+			System.out.println(uri);
 
 		}
 		catch (Exception e)
