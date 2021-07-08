@@ -14,10 +14,10 @@ public class RestDataProvider
     private  Logger log = LogManager.getLogger(RestDataProvider.class);
     private TestDataReader testDataReader = TestDataReader.getInstance();
 
-    @DataProvider(name = "transferRest")
-    public  Object[][] transferRest() {
-        log.debug("Method: transferRest");
-        return testDataReader.readDataMap("rest","transferRest");
+    @DataProvider(name = "addBook")
+    public  Object[][] getAddBook() {
+        log.debug("Method: getAddBook");
+        return testDataReader.readDataMap("rest","addBook");
     }
 
 

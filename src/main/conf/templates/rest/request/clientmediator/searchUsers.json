@@ -1,9 +1,0 @@
-{
-  "clientContext":{
-    "clientId":"mobileapp",
-    "clientRequestTimeout":"500"
-  },
-  "agentId":"SUBDIST1-1",
-  "roleId":"Reseller_admin",
-  "submittedUserId":"webadmin"
-}

@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testData name="ers-std">
- <channel name="ussd">
-         <feature name="ussdCreditTransfer">
-            <dataset>
-                <agentMSISDN>16050000</agentMSISDN>
-                <receiverMSISDN>16070000</receiverMSISDN>
-                <transferAmount>500</transferAmount>
-                <pin>2016</pin>
-                <expectedResult>SUCCESS</expectedResult>
-                <scenario>Stock transfer:Valid data</scenario>
-                <scenarioDesc>Verify that stock transfer is successful and correct message is displayed when valid data is provided</scenarioDesc>
-               </dataset>
-            </feature>
- </channel>
- </testData>
+	<channel name="ussd">
+		<feature name="ussdCreditTransfer">
+			<dataset>
+				<agentMSISDN>16050000</agentMSISDN>
+				<receiverMSISDN>16070000</receiverMSISDN>
+				<transferAmount>500</transferAmount>
+				<pin>2016</pin>
+				<expectedResult>SUCCESS</expectedResult>
+				<scenario>Stock transfer:Valid data</scenario>
+				<scenarioDesc>Verify that stock transfer is successful and correct
+					message is displayed when valid data is provided
+				</scenarioDesc>
+			</dataset>
+		</feature>
+	</channel>
+	<channel name="rest">
+		<feature name="addBook">
+			<dataset>
+				<!---Fill you data set here -->
+				<!-- Demo Data set below -->
+				<resource>RESTAPI.RESOURCE.ADDBOOK</resource>
+				<requestTemplateFileName>addBook.json</requestTemplateFileName>
+				<requestParameters><![CDATA[
+					header|||Content-Type|||application/json
+                    jsonBody|||isbn|||foo
+                    jsonBody|||aisle|||1992
+                    jsonBody|||author|||azen
+                    jsonBody|||book_name|||restAssured]]>
+				</requestParameters>
+				<responseParameters><![CDATA[
+                    http|||ResponseCode|||201
+                    jsonBody|||msg|||Success Book is Added]]>
+				</responseParameters>
+				<expectedResult>SUCCESS</expectedResult>
+				<scenarioName>adding new book in table</scenarioName>
+				<scenarioDesc>adding new book in table</scenarioDesc>
+			</dataset>
+		</feature>
+	</channel>
+</testData>
