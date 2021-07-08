@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.ahmed.ussd.stringbased.ErsUssdStringBased" hash-for-method="verifyCreditTransfer({agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS...)">verifyCreditTransfer({agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS...)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.ahmed.rest.restapi.RestService" hash-for-method="addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;request...)">addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,26 +119,62 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.ahmed.ussd.stringbased.ErsUssdStringBased</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.ahmed.rest.restapi.RestService</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyCreditTransfer({agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS...)">
-                  </a> <!-- verifyCreditTransfer({agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS...) -->
-                  <span class="method-name">verifyCreditTransfer</span>
-                  <span class="parameters">({agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS, scenario=Stock transfer:Valid data, scenarioDesc=Verify that stock transfer is successful and correct message is displayed when valid data is provided})</span>
+                  <a name="addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;request...)">
+                  </a> <!-- addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...) -->
+                  <span class="method-name">addAccountType</span>
+                  <span class="parameters">({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<requestParameters><![CDATA[
+					header|||Content-Type|||application/json
+                    jsonBody|||isbn|||foo
+                    jsonBody|||aisle|||1992
+                    jsonBody|||author|||azen
+                    jsonBody|||book_name|||restAssured]]>
+				</requestParameters>
+, responseParameters=<responseParameters><![CDATA[
+                    http|||ResponseCode|||201
+                    jsonBody|||msg|||Success Book is Added]]>
+				</responseParameters>
+, expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table})</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: groovy/lang/GroovyObject
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at io.restassured.RestAssured.&lt;clinit&gt;(RestAssured.java:347)
+	at com.ahmed.common.utilities.RestAPIHelper.performRestTransaction(RestAPIHelper.java:52)
+	at com.ahmed.rest.restapi.RestService.addAccountType(RestService.java:51)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+Caused by: java.lang.ClassNotFoundException: groovy.lang.GroovyObject
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 43 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/ahmedbokhari/git/test-project/testng.xml</span>
+            <span class="header-content">/Users/ahmedbokhari/git/test-project/src/test/resources/test-suites/testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,8 +182,13 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;add-book&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.ahmed.ussd.stringbased.ErsUssdStringBased&quot;/&gt;
+      &lt;class name=&quot;com.ahmed.rest.restapi.RestService&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -172,10 +213,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">ussd-credit-transfer</span>
+              <span class="test-group-name">add-book</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyCreditTransfer</span>
+                <span class="method-in-group-name">addAccountType</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -197,14 +238,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyCreditTransfer')
-data.setCell(0, 2, 'com.ahmed.ussd.stringbased.ErsUssdStringBased')
-data.setCell(0, 3, 218);
+data.setCell(0, 1, 'addAccountType')
+data.setCell(0, 2, 'com.ahmed.rest.restapi.RestService')
+data.setCell(0, 3, 9);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 218 ms</span>
+              <span class="suite-total-time">Total running time: 9 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -230,26 +271,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.ahmed.ussd.stringbased.ErsUssdStringBased</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.ahmed.rest.restapi.RestService</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">50 ms</span>
+                <span class="method-start">71 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyCreditTransfer({agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS...)</span>
-                <span class="method-start">51 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">addAccountType({resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<request...)</span>
+                <span class="method-start">72 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownMethod([TestResult name=verifyCreditTransfer status=SUCCESS method=ErsUssdStringBased.verifyCreditTransfer(...)</span>
-                <span class="method-start">275 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">5310 ms</span>
+                <span class="method-start">5125 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

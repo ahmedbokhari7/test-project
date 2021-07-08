@@ -96,6 +96,27 @@ public class HelperClass {
         return url;
     }
 
+    public String returnRestBaseUri(String component)
+	{
+		String uri=null;
+		try
+		{
+			String restProtocol = reader.readProperties("REST."+ component.toUpperCase()+".PROTOCOL");
+			String restPort = reader.readProperties("REST."+ component.toUpperCase()+".PORT");
+		//	String server = restHost;
+			String server = "localhost";
+			uri = restProtocol + server + restPort;
+			log.info("Generated REST API url: "+uri);
+
+		}
+		catch (Exception e)
+		{
+			log.error("Error occurred",e);
+		}
+		return uri;
+	}
+
+    
 	public String returnRestBaseUri()
 	{
 		String uri=null;

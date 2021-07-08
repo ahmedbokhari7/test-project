@@ -9,10 +9,44 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">271</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">88</td><td>add-book</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.ahmed.ussd.stringbased.ErsUssdStringBased</td><td><a href="#m0">verifyCreditTransfer</a></td><td rowspan="1">1625722539297</td><td rowspan="1">218</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.ahmed.rest.restapi.RestService</td><td><a href="#m0">addAccountType</a></td><td rowspan="1">1625732453226</td><td rowspan="1">9</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.ahmed.ussd.stringbased.ErsUssdStringBased#verifyCreditTransfer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{agentMSISDN=16050000, receiverMSISDN=16070000, transferAmount=500, pin=2016, expectedResult=SUCCESS, scenario=Stock transfer:Valid data, scenarioDesc=Verify that stock transfer is successful and correct message is displayed when valid data is provided}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com.ahmed.rest.restapi.RestService#addAccountType</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{resource=RESTAPI.RESOURCE.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;requestParameters&gt;&lt;![CDATA[
+					header|||Content-Type|||application/json
+                    jsonBody|||isbn|||foo
+                    jsonBody|||aisle|||1992
+                    jsonBody|||author|||azen
+                    jsonBody|||book_name|||restAssured]]&gt;
+				&lt;/requestParameters&gt;
+, responseParameters=&lt;responseParameters&gt;&lt;![CDATA[
+                    http|||ResponseCode|||201
+                    jsonBody|||msg|||Success Book is Added]]&gt;
+				&lt;/responseParameters&gt;
+, expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NoClassDefFoundError: groovy/lang/GroovyObject
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at io.restassured.RestAssured.&lt;clinit&gt;(RestAssured.java:347)
+	at com.ahmed.common.utilities.RestAPIHelper.performRestTransaction(RestAPIHelper.java:52)
+	at com.ahmed.rest.restapi.RestService.addAccountType(RestService.java:51)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+Caused by: java.lang.ClassNotFoundException: groovy.lang.GroovyObject
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 43 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

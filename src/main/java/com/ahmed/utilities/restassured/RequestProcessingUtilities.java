@@ -1,12 +1,3 @@
-/**
- * 
- */
-/**
- * @author ahmedbokhari
-
-
- *
- */
 package com.ahmed.utilities.restassured;
 
 import java.io.File;
@@ -16,9 +7,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.util.FileUtils;
 
 import com.ahmed.common.utilities.ConfigPropertyReader;
 import com.ahmed.common.utilities.HelperClass;
@@ -36,8 +27,12 @@ import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 
+/**
+ * Created by ahmed bokahri on 01/02/21.
+ */
 public class RequestProcessingUtilities
 {
+	
 	private static final Logger log = LogManager.getLogger(RequestProcessingUtilities.class);
 	private HelperClass helperClass = HelperClass.getInstance();
 	private ConfigPropertyReader reader = ConfigPropertyReader.getInstance();
@@ -45,14 +40,17 @@ public class RequestProcessingUtilities
 
 	public Response sendRequest(RequestSpecification specification,Method requestType, String urlKey, Map<String,String> testdata,String component,String fileKey,String cdataKey,Map<String,Response> prevResponseMap) {
 		String url = reader.readProperties(urlKey);
-		specification.baseUri(helperClass.returnRestBaseUri());
+		if(component != null && !component.isEmpty())
+			specification.baseUri(helperClass.returnRestBaseUri(component));
+		else
+			specification.baseUri(helperClass.returnRestBaseUri());
 		if(testdata!=null && !testdata.isEmpty()) {
 			HashMap<String, HashMap<String, String>> extractedinfo = Utilities.getInstance().CdataToMap(testdata, cdataKey,prevResponseMap);
 			specification = addJsonBody(specification, extractedinfo.get("jsonBody"), component, testdata.get("version"), testdata.get(fileKey));
+			specification = addMultiPartContent(specification, extractedinfo.get("formData"),extractedinfo, component, testdata.get("version"), testdata.get(fileKey));
 			specification = addparams(specification, extractedinfo.get("pathParam"), true);
 			specification = addparams(specification, extractedinfo.get("param"), false);
 			specification = addheaders(specification, extractedinfo.get("header"));
-			specification = addMultiPartFile(specification, extractedinfo.get("multiPart"),component);
 		}
 		log.debug(RequestPrinter.print((FilterableRequestSpecification) specification, requestType.name(),
 				((FilterableRequestSpecification) specification).getBaseUri() + url, LogDetail.ALL,
@@ -65,24 +63,95 @@ public class RequestProcessingUtilities
 
 		return response;
 	}
+	
+	/**
+     * 
+     * @param specification
+     * @param requestType
+     * @param urlKey
+     * @param testdata
+     * @param component
+     * @param payload
+     * @param cdataKey
+     * @param prevResponseMap
+     * @return
+     */
+    public Response sendRequestWithBody(RequestSpecification specification,Method requestType, String urlKey, 
+            Map<String,String> testdata,String component,String payload,String cdataKey,Map<String,Response> prevResponseMap) {
+        String url = reader.readProperties(urlKey);
+		if(component != null && !component.isEmpty())
+			specification.baseUri(helperClass.returnRestBaseUri(component));
+		else
+			specification.baseUri(helperClass.returnRestBaseUri());
+        if(testdata!=null && !testdata.isEmpty()) {
+            HashMap<String, HashMap<String, String>> extractedinfo = Utilities.getInstance().CdataToMap(testdata, cdataKey,prevResponseMap);
+            specification = addJsonPayload(specification, extractedinfo.get("jsonBody"), testdata.get("version"), payload);
+            specification = addMultiPartContent(specification, extractedinfo.get("formData"),extractedinfo, component, testdata.get("version"), payload);
+            specification.contentType(ContentType.JSON);
+            specification = addparams(specification, extractedinfo.get("pathParam"), true);
+            specification = addparams(specification, extractedinfo.get("param"), false);
+            specification = addheaders(specification, extractedinfo.get("header"));
+        }
+        log.debug(RequestPrinter.print((FilterableRequestSpecification) specification, requestType.name(),
+                ((FilterableRequestSpecification) specification).getBaseUri() + url, LogDetail.ALL,
+                Collections.emptySet(), System.out, true));
 
-	private RequestSpecification addMultiPartFile(RequestSpecification specification, HashMap<String, String> multiPartFileMap,String component)
+        Response response= specification.request(requestType, url);
+
+        log.debug(ResponsePrinter.print(response, response.getBody(),
+                System.out, LogDetail.ALL, true,Collections.emptySet()));
+
+        return response;
+    }
+
+	public RequestSpecification addMultiPartContent(
+			RequestSpecification spec,
+			Map<String, String> jsonPathsMap,
+			Map<String, HashMap<String, String>> extractedCData,
+			String component,
+			String version,
+			String filename)
 	{
-		if (multiPartFileMap !=null && !multiPartFileMap.isEmpty()) {
-			String filepath= ConfigPath.FILE_UPLOAD_PATH + component.toLowerCase() +"/"
-					+ multiPartFileMap.get("fileName");
-			try {
-				specification.multiPart
-						(new MultiPartSpecBuilder("Test-Content-In-File".getBytes())
-								.fileName(filepath).controlName("file")
-								.mimeType(multiPartFileMap.get("mimeType")).build());
-
-			} catch (Exception e) {
-				log.error("Error occurred ", e.getCause());
-				throw new RuntimeException(e);
+		if ((jsonPathsMap != null && !jsonPathsMap.isEmpty()))
+		{
+			for (Map.Entry<String, String> formData : jsonPathsMap.entrySet())
+			{
+				String[] arr = formData.getValue().split(",");
+				if (arr[0].equalsIgnoreCase("data"))
+				{
+					String filepath = ConfigPath.REST_REQUEST_TEMPLATE_PATH + component.toLowerCase() + (null == version || version.isEmpty() ?
+							"/" :
+							"_" + version.replace(".", "_") + "/") + filename;
+					try
+					{
+						String requestFromFile = FileUtils.readFileToString(new File(filepath), StandardCharsets.UTF_8);
+						String payload = modifyJsonWithParameter(requestFromFile, extractedCData.get(arr[2]));
+						spec.multiPart((new MultiPartSpecBuilder(payload).controlName(formData.getKey()).mimeType(
+								arr[1]).build()));
+					}
+					catch (IOException e)
+					{
+						log.error("Error occurred ", e.getCause());
+						throw new RuntimeException(e);
+					}
+				}
+				else if (arr[0].equalsIgnoreCase("file"))
+				{
+					String filepath = ConfigPath.FILE_UPLOAD_PATH + component.toLowerCase() + "/" + arr[2];
+					try
+					{
+						spec.multiPart(new MultiPartSpecBuilder("Test-Content-In-File".getBytes()).fileName(filepath).controlName(
+								formData.getKey()).mimeType(arr[1]).build());
+					}
+					catch (Exception e)
+					{
+						log.error("Error occurred ", e.getCause());
+						throw new RuntimeException(e);
+					}
+				}
 			}
 		}
-		return specification;
+		return spec;
 	}
 
 	public RequestSpecification addJsonBody(RequestSpecification spec, Map<String,String> jsonPathsMap, String component, String version, String filename){
@@ -104,6 +173,16 @@ public class RequestProcessingUtilities
 		}
 		return spec;
 	}
+	
+	public RequestSpecification addJsonPayload(RequestSpecification spec, Map<String, String> jsonPathsMap,
+            String version, String payload) {
+        if (jsonPathsMap != null && !jsonPathsMap.isEmpty()) {
+            payload = modifyJsonWithParameter(payload, jsonPathsMap);
+            spec.body(payload);
+            spec.contentType(ContentType.JSON);
+        }
+        return spec;
+    }
 
 	private String modifyJsonWithParameter(String originalJsonString, Map<String,String> parameterMap){
 		com.jayway.jsonpath.Configuration config = com.jayway.jsonpath.Configuration.defaultConfiguration();
