@@ -20,7 +20,7 @@
 			<dataset>
 				<!---Fill you data set here -->
 				<!-- Demo Data set below -->
-				<resource>RESTAPI.RESOURCE.ADDBOOK</resource>
+				<resource>RESTAPI.RESOURCES.ADDBOOK</resource>
 				<requestTemplateFileName>addBook.json</requestTemplateFileName>
 				<requestParameters><![CDATA[
 					header|||Content-Type|||application/json

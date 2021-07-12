@@ -2,6 +2,7 @@ package com.ahmed.ussd.stringbased;
 
 import java.util.HashMap;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.ITestResult;
@@ -12,10 +13,13 @@ import org.testng.annotations.Test;
 import com.ahmed.common.database.DatabaseQuery;
 import com.ahmed.dataproviders.UssdDataProvider;
 import com.ahmed.testbase.TestBase;
+import com.ahmed.common.utilities.HelperClass;
 
 public class ErsUssdStringBased extends TestBase {
+	
 	private static Logger log = LogManager.getLogger(ErsUssdStringBased.class);
 	 private DatabaseQuery query = DatabaseQuery.getInstance();
+     HelperClass helperClass = HelperClass.getInstance();
 
 	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod() {

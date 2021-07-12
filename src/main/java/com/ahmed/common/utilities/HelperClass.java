@@ -9,7 +9,8 @@
 package com.ahmed.common.utilities;
 
 import java.sql.Timestamp;
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.apache.commons.io.FilenameUtils;
@@ -55,6 +56,10 @@ public class HelperClass {
 			skipBugs = false;
 
 	}
+	public String getCustomer()
+    {
+        return customer.getCustomer();
+    }
 
 	public static HelperClass getInstance() {
 
@@ -121,6 +126,37 @@ public class HelperClass {
 		}
 		return uri;
 	}
+    private String calculateDesiredDate(Date date,String dateFormat, int offset) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, offset);
+        Date newDate = cal.getTime();
+        SimpleDateFormat format = new SimpleDateFormat(dateFormat);
+        return format.format(newDate);
+    }
+
+
+    public String getDesiredDate(String dateKeyword,String dateFormat) {
+        dateKeyword = dateKeyword.toLowerCase();
+        Date date = new Date();
+        String desiredDate;
+        switch (dateKeyword)
+        {
+            case "yesterday":
+                desiredDate = calculateDesiredDate(date,dateFormat,-1);
+                break;
+            case "today":
+                desiredDate = calculateDesiredDate(date,dateFormat,0);
+                break;
+            case "tomorrow":
+                desiredDate = calculateDesiredDate(date,dateFormat,1);
+                break;
+            default:
+                desiredDate = dateKeyword;
+                break;
+        }
+        return desiredDate;
+    }
 
     
 	public String returnRestBaseUri()

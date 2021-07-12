@@ -1,18 +1,23 @@
 package com.ahmed.utilities.restassured;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-
-
-import com.jayway.jsonpath.DocumentContext;
 import com.ahmed.common.utilities.ConfigPropertyReader;
 import com.ahmed.common.utilities.HelperClass;
 import com.ahmed.common.utilities.Utilities;
 import com.ahmed.enums.ConfigPath;
+import com.jayway.jsonpath.DocumentContext;
 
-import io.restassured.RestAssured;
 import io.restassured.builder.MultiPartSpecBuilder;
-import io.restassured.config.EncoderConfig;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
@@ -21,16 +26,6 @@ import io.restassured.internal.print.ResponsePrinter;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
-import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 
 
@@ -48,6 +43,7 @@ public class RequestProcessingUtilities
 
 	public Response sendRequest(RequestSpecification specification,Method requestType, String urlKey, Map<String,String> testdata,String component,String fileKey,String cdataKey,Map<String,Response> prevResponseMap) {
 		System.out.println("AHMED HERE 4");
+		
 		String url = reader.readProperties(urlKey);
 		if(component != null && !component.isEmpty())
 			specification.baseUri(helperClass.returnRestBaseUri(component));
@@ -68,9 +64,9 @@ public class RequestProcessingUtilities
 		log.debug(RequestPrinter.print((FilterableRequestSpecification) specification, requestType.name(),
 				((FilterableRequestSpecification) specification).getBaseUri() + url, LogDetail.ALL,
 				Collections.emptySet(), System.out, true));
-
+		System.out.println(requestType+"---- " +"--- "+url);
 		Response response= specification.request(requestType, url);
-
+		System.out.println("AHMED HERE 7");
 		log.debug(ResponsePrinter.print(response, response.getBody(),
 				System.out, LogDetail.ALL, true,Collections.emptySet()));
 

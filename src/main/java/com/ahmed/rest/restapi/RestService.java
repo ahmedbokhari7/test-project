@@ -54,7 +54,7 @@ public class RestService extends TestBase {
 			Response response = restService.performRestTransaction(testData, "POST", "resource",
 					"requestTemplateFileName", "requestParameters", component, responseHashMap);	
 		    
-			System.out.println("AHMED HERE 7");
+			System.out.println("AHMED HERE 8");
 			
 //			responseHashMap.put("createFeatureResponse", response);
 //			restService.responseValidation(testData, response, "responseParameters", component, "");

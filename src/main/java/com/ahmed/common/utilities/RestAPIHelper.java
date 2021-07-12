@@ -4,9 +4,11 @@ import java.util.HashMap;
 
 
 
+
 import java.util.Map;
 
 import com.ahmed.utilities.restassured.RequestProcessingUtilities;
+import com.ahmed.utilities.restassured.ResponseProcessingUtilities;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -20,7 +22,7 @@ public class RestAPIHelper
 {
 	private static final Logger log = LogManager.getLogger(RestAPIHelper.class);
 	private static final RequestProcessingUtilities requestProcessingUtilities = new RequestProcessingUtilities();
-	//private static final ResponseProcessingUtilities responseProcessingUtilities = new ResponseProcessingUtilities();
+	private static final ResponseProcessingUtilities responseProcessingUtilities = new ResponseProcessingUtilities();
 	private RestAPIHelper() {
 		log.info("RestHelper Initialized");
 		System.out.println("RestHelper Initialized");
@@ -71,16 +73,16 @@ public class RestAPIHelper
 			Map<String, String> responseBodyMap = extractedInfo.get("jsonBody");
 
 			if (httpResponseCode != null && !httpResponseCode.isEmpty()) {
-	//			responseProcessingUtilities.checkResponseCode(response, httpResponseCode);
+				responseProcessingUtilities.checkResponseCode(response, httpResponseCode);
 			}
 			if (response.body() != null && testDataMap.containsKey("responseTemplateFileName")) {
-	//			responseProcessingUtilities.jsonSchemaValidation(response, testDataMap, component);
+				responseProcessingUtilities.jsonSchemaValidation(response, testDataMap, component);
 			}
 			if (responseHeaderMap != null && !responseHeaderMap.isEmpty()) {
-	//			responseProcessingUtilities.headerChecks(response, responseHeaderMap);
+				responseProcessingUtilities.headerChecks(response, responseHeaderMap);
 			}
 			if (responseBodyMap != null && !responseBodyMap.isEmpty()) {
-	//			responseProcessingUtilities.fieldChecks(response, testDataMap, responseBodyMap, successKey);
+				responseProcessingUtilities.fieldChecks(response, testDataMap, responseBodyMap, successKey);
 			}
 		} catch (Exception Ex) {
 			Ex.printStackTrace();
