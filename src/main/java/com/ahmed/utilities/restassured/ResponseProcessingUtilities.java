@@ -103,20 +103,28 @@ public class ResponseProcessingUtilities
 		try {
 			for (Map.Entry<String, String> entry : responseBodyMap.entrySet()) {
 				//Below we are using groovy path expression to find an element from json response
+				System.out.println("check 0"+"get key = "+entry.getKey()+"  get value ="+entry.getValue());
 				String actualResult = response.path(entry.getKey()).toString();
 				actualResult  =  formatDecimal(actualResult, entry.getValue());
+				System.out.println("check 1"+actualResult);
 				if ((successKey != null && !successKey.isEmpty()) && entry.getValue().matches("\\$\\{(.*)\\}")) {
 					Matcher matcher = Pattern.compile("\\$\\{(.*)\\}").matcher(entry.getValue());
+					System.out.println("check 2"+ entry.getValue());
+
 					matcher.find();
 					String key = matcher.group(1);
 
 					String procesedExpectedResult = testDataMap.get(key).equalsIgnoreCase("SUCCESS") ?
 							commonModuleHelper.processMessageBuild(reader.readProperties(successKey), testDataMap) :
+	//						commonModuleHelper.processMessageBuild(successKey, testDataMap) :
 							commonModuleHelper.processMessageBuild(testDataMap.get(key), testDataMap);
+				System.out.println("check 3 "+procesedExpectedResult);
 
+							
 					log.info("<<<<---------After Processing Expected Result Value is---------->>>> " + procesedExpectedResult);
 					if (Pattern.compile(procesedExpectedResult).matcher(actualResult).matches()) {
 						softAssert.get().assertTrue(true, "Matched in validation at " + entry.getKey() + " ");
+						System.out.println("Matched in validation at " + entry.getKey());
 					} else {
 						softAssert.get().assertTrue(false, "Mismatch in validation at " + entry.getKey() + " ");
 					}

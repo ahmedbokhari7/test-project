@@ -30,8 +30,9 @@
                     jsonBody|||book_name|||restAssured]]>
 				</requestParameters>
 				<responseParameters><![CDATA[
-                    http|||ResponseCode|||201
-                    jsonBody|||msg|||Success Book is Added]]>
+                    http|||ResponseCode|||202
+                    jsonBody|||msg|||${expectedResult}
+                    jsonBody|||id|||foo1992]]>
 				</responseParameters>
 				<expectedResult>SUCCESS</expectedResult>
 				<scenarioName>adding new book in table</scenarioName>

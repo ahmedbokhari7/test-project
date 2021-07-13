@@ -47,7 +47,7 @@ public class RestService extends TestBase {
 		log.info("Scenario Description: " + testData.get("scenarioDesc"));
 		log.info("Expected Result: " + testData.get("expectedResult"));
 //		extent.startFeature(tcName + ":" + testData.get("scenarioName"), testData.get("scenarioDesc"));//
-	//	try {
+		try {
 //			extent.getFeature().info("Sending REST request to createFeatureRest and verifying the response");
 			// responseHashMap = featureMethods.rootlogin();
 		    System.out.println("AHMED HERE 2");
@@ -56,12 +56,12 @@ public class RestService extends TestBase {
 		    
 			System.out.println("AHMED HERE 8");
 			
-//			responseHashMap.put("createFeatureResponse", response);
-//			restService.responseValidation(testData, response, "responseParameters", component, "");
-//		} catch (Exception e) {
-//			log.error("Error occurred", e);
-//			throw (e);
-//		}
+			responseHashMap.put("createFeatureResponse", response);
+			restService.responseValidation(testData, response, "responseParameters", component, "REST.RESULT");
+		} catch (Exception e) {
+			log.error("Error occurred", e);
+			throw (e);
+		}
 	}
 
 

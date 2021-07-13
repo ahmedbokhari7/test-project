@@ -9,9 +9,9 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2,673</td><td>add-book</td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2,193</td><td>add-book</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.ahmed.rest.restapi.RestService</td><td><a href="#m0">addBook</a></td><td rowspan="1">1626074990614</td><td rowspan="1">2584</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.ahmed.rest.restapi.RestService</td><td><a href="#m0">addBook</a></td><td rowspan="1">1626169424742</td><td rowspan="1">2119</td></tr></tbody>
 </table>
 <h2>Test</h2><h3 id="m0">com.ahmed.rest.restapi.RestService#addBook</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{resource=RESTAPI.RESOURCES.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=&lt;requestParameters&gt;&lt;![CDATA[
 					header|||Content-Type|||application/json
@@ -21,8 +21,9 @@
                     jsonBody|||book_name|||restAssured]]&gt;
 				&lt;/requestParameters&gt;
 , responseParameters=&lt;responseParameters&gt;&lt;![CDATA[
-                    http|||ResponseCode|||201
-                    jsonBody|||msg|||Success Book is Added]]&gt;
+                    http|||ResponseCode|||202
+                    jsonBody|||msg|||${expectedResult}
+                    jsonBody|||id|||foo1992]]&gt;
 				&lt;/responseParameters&gt;
 , expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>

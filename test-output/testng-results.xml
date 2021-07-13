@@ -2,23 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2673" started-at="2021-07-12T12:29:50 PKT" finished-at="2021-07-12T12:29:53 PKT">
+  <suite name="Suite" duration-ms="2193" started-at="2021-07-13T14:43:44 PKT" finished-at="2021-07-13T14:43:46 PKT">
     <groups>
       <group name="add-book">
-        <method signature="RestService.addBook(java.util.Map)[pri:1, instance:com.ahmed.rest.restapi.RestService@7eac9008]" name="addBook" class="com.ahmed.rest.restapi.RestService"/>
+        <method signature="RestService.addBook(java.util.Map)[pri:1, instance:com.ahmed.rest.restapi.RestService@2f8dad04]" name="addBook" class="com.ahmed.rest.restapi.RestService"/>
       </group> <!-- add-book -->
     </groups>
-    <test name="Test" duration-ms="2673" started-at="2021-07-12T12:29:50 PKT" finished-at="2021-07-12T12:29:53 PKT">
+    <test name="Test" duration-ms="2193" started-at="2021-07-13T14:43:44 PKT" finished-at="2021-07-13T14:43:46 PKT">
       <class name="com.ahmed.rest.restapi.RestService">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.rest.restapi.RestService@7eac9008]" name="beforeSuite" is-config="true" duration-ms="6" started-at="2021-07-12T12:29:50 PKT" finished-at="2021-07-12T12:29:50 PKT">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.ahmed.rest.restapi.RestService@2f8dad04]" name="beforeSuite" is-config="true" duration-ms="5" started-at="2021-07-13T14:43:44 PKT" finished-at="2021-07-13T14:43:44 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.rest.restapi.RestService@7eac9008]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-07-12T12:29:50 PKT" finished-at="2021-07-12T12:29:50 PKT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="addBook(java.util.Map)[pri:1, instance:com.ahmed.rest.restapi.RestService@7eac9008]" name="addBook" duration-ms="2584" started-at="2021-07-12T12:29:50 PKT" data-provider="addBook" finished-at="2021-07-12T12:29:53 PKT">
+        <test-method status="PASS" signature="addBook(java.util.Map)[pri:1, instance:com.ahmed.rest.restapi.RestService@2f8dad04]" name="addBook" duration-ms="2119" started-at="2021-07-13T14:43:44 PKT" data-provider="addBook" finished-at="2021-07-13T14:43:46 PKT">
           <params>
             <param index="0">
               <value>
@@ -30,8 +26,9 @@ header|||Content-Type|||application/json
                     jsonBody|||book_name|||restAssured]]]]><![CDATA[>
 </requestParameters>
 , responseParameters=<responseParameters><![CDATA[
-                    http|||ResponseCode|||201
-                    jsonBody|||msg|||Success Book is Added]]]]><![CDATA[>
+                    http|||ResponseCode|||202
+                    jsonBody|||msg|||${expectedResult}
+                    jsonBody|||id|||foo1992]]]]><![CDATA[>
 </responseParameters>
 , expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table}]]>
               </value>
@@ -40,7 +37,11 @@ header|||Content-Type|||application/json
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBook -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.rest.restapi.RestService@7eac9008]" name="afterSuite" is-config="true" duration-ms="1" started-at="2021-07-12T12:29:58 PKT" finished-at="2021-07-12T12:29:58 PKT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ahmed.rest.restapi.RestService@2f8dad04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-07-13T14:43:44 PKT" finished-at="2021-07-13T14:43:44 PKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.ahmed.rest.restapi.RestService@2f8dad04]" name="afterSuite" is-config="true" duration-ms="1" started-at="2021-07-13T14:43:51 PKT" finished-at="2021-07-13T14:43:51 PKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

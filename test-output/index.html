@@ -138,8 +138,9 @@
                     jsonBody|||book_name|||restAssured]]>
 				</requestParameters>
 , responseParameters=<responseParameters><![CDATA[
-                    http|||ResponseCode|||201
-                    jsonBody|||msg|||Success Book is Added]]>
+                    http|||ResponseCode|||202
+                    jsonBody|||msg|||${expectedResult}
+                    jsonBody|||id|||foo1992]]>
 				</responseParameters>
 , expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table})</span>
                 </div> <!-- method-content -->
@@ -215,7 +216,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'addBook')
 data.setCell(0, 2, 'com.ahmed.rest.restapi.RestService')
-data.setCell(0, 3, 2584);
+data.setCell(0, 3, 2119);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -253,15 +254,15 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">87 ms</span>
+                <span class="method-start">73 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">addBook({resource=RESTAPI.RESOURCES.ADDBOOK, requestTemplateFileName=addBook.json, requestParameters=<reques...)</span>
-                <span class="method-start">89 ms</span>
+                <span class="method-start">73 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">7704 ms</span>
+                <span class="method-start">7222 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

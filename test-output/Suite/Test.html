@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 12 12:29:50 PKT 2021</td>
+<td>Started on:</td><td>Tue Jul 13 14:43:44 PKT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2673 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2193 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>add-book </td>
 </tr><tr>
@@ -83,13 +83,14 @@ function toggleAllBoxes() {
                     jsonBody|||book_name|||restAssured]]>
 				</requestParameters>
 , responseParameters=<responseParameters><![CDATA[
-                    http|||ResponseCode|||201
-                    jsonBody|||msg|||Success Book is Added]]>
+                    http|||ResponseCode|||202
+                    jsonBody|||msg|||${expectedResult}
+                    jsonBody|||id|||foo1992]]>
 				</responseParameters>
 , expectedResult=SUCCESS, scenarioName=adding new book in table, scenarioDesc=adding new book in table}</td>
 <td></td>
 <td>2</td>
-<td>com.ahmed.rest.restapi.RestService@7eac9008</td></tr>
+<td>com.ahmed.rest.restapi.RestService@2f8dad04</td></tr>
 </table><p>
 </body>
 </html>
